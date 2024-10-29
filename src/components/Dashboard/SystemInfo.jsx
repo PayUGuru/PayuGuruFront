@@ -8,7 +8,7 @@ import DashboardTopbar from "./commonComponents/DashboardTopbar";
 import useInactivityTimeout from "../../hooks/useInactivityTimeout";
 import { Text, Table } from '@mantine/core';
 import { useNetwork , useOs} from '@mantine/hooks';
-
+const packageJson = require('../../../package.json');
 function SystemInfo(){
 
     // Timeout Activity
@@ -16,7 +16,13 @@ function SystemInfo(){
     let navigate = useNavigate();
     const networkStatus = useNetwork();
     const API_Version = '0.0.01-beta';
-    const APP_Version = 'v1.0.0';
+    let APP_Version =  "unknown";
+    // let versionToDisplay = "unknown";
+    try {
+      APP_Version = packageJson.version; // Assuming VERSION is globally defined, e.g., through a bundler
+    } catch (error) {
+        console.log("Cannot get version of application.");
+    }
     const os = useOs();
     useEffect(() => {
         if (isInactive) {

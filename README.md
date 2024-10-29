@@ -61,7 +61,7 @@ pm2 save
 ```
 
 ```bash
-pm2 savestartup
+pm2 startup
 ```
 
 ## Docker Image Build
