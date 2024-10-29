@@ -51,7 +51,7 @@
    width: 260px;
    height:1100px;
    background: #FFF;
-   border-radius: 20px;
+   /* border-radius: 20px; */
    margin: 110px 30px;
    padding: 10px 0px 10px 0px;
    position: absolute;
@@ -354,7 +354,7 @@
  .account-card{
      width: 100%;
      height:auto;
-     margin: 20px 15px;
+     /* margin: 20px 15px; */
      border-radius: 20px;
      background: var(--bg-account-card);
  }
@@ -686,6 +686,20 @@
      .account-details h5 {
      font-size: 18px;
      }
+     .sidebar{
+        width: 260px;
+        height:910px;
+        background: var(--bg-card);
+        
+        border: var(--border);
+        box-shadow: var(--s);
+        padding-top:10px;
+        margin: 85px 0px;
+        padding: 10px 0px 10px 0px;
+        /* margin-bottom: 10px; */
+        position: fixed;
+        overflow-y: auto;
+      }
      
  }
  

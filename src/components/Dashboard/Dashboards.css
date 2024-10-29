@@ -59,7 +59,7 @@
 .account-card {
     width: 100%;
     height: auto;
-    margin: 20px 15px;
+    /* margin: 20px 15px; */
     border-radius: 20px;
     /* background: linear-gradient(91.15deg, #4E72F0 10.36%, #8A8BF9 84.51%); */
 }

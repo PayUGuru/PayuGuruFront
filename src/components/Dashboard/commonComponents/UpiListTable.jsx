@@ -165,7 +165,7 @@ const UpiListTable = ({
         },
       },
       { Header: "Date", accessor: "date" },
-      { Header: "Time", accessor: "time" },
+      { Header: "Last Transaction", accessor: "time" },
       //   { Header: 'Timestamp', accessor: 'timestamp' },
       { Header: "Bank", accessor: "upi_bank" },
       {

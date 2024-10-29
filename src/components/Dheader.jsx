@@ -78,7 +78,7 @@ const Header = () => {
     <div>
       <header className={`h-theme ${theme} theme-controller`}>
        <div>
-       <nav className="container-fluid navbar navbar-expand-lg px-5">
+       <nav className="container-fluid navbar navbar-expand-lg">
 
           {/* <div className="navbar-brand" href=""> */}
           <a className="navbar-brand" href="/">

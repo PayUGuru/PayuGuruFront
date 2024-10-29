@@ -279,10 +279,10 @@ function Dashboard() {
             <DashboardTopbar />
           </div>
 
-          <div>
-            <div className="card account-card mt-4">
+          
+            <div className="card account-card my-4">
               <div className="card-body">
-                <div className="row">
+                <div >
                   {/* <div className="col-lg-4 col-md-4 col-12 my-auto">
                     <p>Account Balance</p>
                     <h3 > ₹ {mainBalance }</h3>
@@ -307,7 +307,7 @@ function Dashboard() {
                 </div> */}
               </div>
             </div>
-          </div>
+        
 
           <div className="row">
             <div className="col-lg-4 col-md-4 col-12">
