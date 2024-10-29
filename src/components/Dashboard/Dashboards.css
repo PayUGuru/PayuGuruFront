@@ -8,6 +8,18 @@
     padding-left: 320px;
     padding-right: 40px;
 }
+.customBtnGrop , .customSearchBox {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+   
+ }
+ .customsearch{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+   
+ }
 .top p {
     font-size: 14px;
     font-weight: 500;
@@ -424,4 +436,11 @@
     .main-content .btn-top {
         float: left;
     }
+    .customBtnGrop , .customSearchBox, .customsearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+     }
+     
 }

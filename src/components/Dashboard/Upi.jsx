@@ -227,13 +227,15 @@ function Upi() {
           <div className="row mb-3">
             <div className="col-lg-12 col-md-12 col-12">
               <div className="card pb-0 account-details border-0 shadow-lg">
-                <div className="row">
+                <h4 className="bg-transparent mt-0 p-3 h-theme mb-0">UPIs</h4>
+
+                {/* <div className="row">
                   <div className="col-xl-4 col-lg-12 col-md-12 col-12">
                     <h4 className="bg-transparent mt-0 p-3 h-theme">UPIs</h4>
                   </div>
                   <div className="col-xl-8 col-lg-12 col-md-12 col-12">
                     <div className="d-flex justify-content-end align-items-center pt-2">
-                      {/* <div className="d-flex mr-2">
+                      <div className="d-flex mr-2">
                         <input
                           type="text"
                           className="searchTerm"
@@ -252,8 +254,8 @@ function Upi() {
                         >
                           <FiSearch />
                         </button>
-                      </div> */}
-                      {/* <button className="btn btn1 mr-2 btn-outline-secondary">
+                      </div>
+                      <button className="btn btn1 mr-2 btn-outline-secondary">
                         UPI Prefixes
                         <i className="fa fa-address-book ml-2"></i>
                       </button>
@@ -262,10 +264,10 @@ function Upi() {
                       </button>
                       <button className="btn btn1 bg-dark text-white mr-2">
                         Filter <i className="fa fa-filter ml-2"></i>
-                      </button> */}
+                      </button>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="card-body p-3">
                   <div className="table-responsive">
                     {loader ? (

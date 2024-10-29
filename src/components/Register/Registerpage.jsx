@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Registerpage.css";
 import loadingImg from "../../assets/img/loading.gif";
 import { ENDPOINTS } from "../../utils/apiConfig";
+import { Button } from "@mui/material";
 
 const Register = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [loader, setLoader] = useState(false);
   const [registerErr, setRegisterErr] = useState("");
+  const [showPass, setShowPass] = useState(false);
   const [fieldErrors, setFieldErrors] = useState({
     userName: "",
     userPhone: "",
@@ -34,6 +36,10 @@ const Register = () => {
     if (e.target.checked === false) {
       setRegisterErr("");
     }
+  };
+
+  const toggleApiKeyVisibility = () => {
+    setShowPass(!showPass);
   };
 
   const handleInputChange = (e) => {
@@ -195,7 +201,7 @@ const Register = () => {
                     value={formData.userName}
                     onChange={handleInputChange}
                   />
-                  <p className="msg text-warning">{fieldErrors.userName}</p>
+                  <p className="msg text-warning p-2">{fieldErrors.userName}</p>
                 </div>
                 <div className="inputbox">
                   <label htmlFor="companyName">Company Name</label>
@@ -206,7 +212,7 @@ const Register = () => {
                     value={formData.companyName}
                     onChange={handleInputChange}
                   />
-                  <p className="msg text-warning">{fieldErrors.companyName}</p>
+                  <p className="msg text-warning p-2">{fieldErrors.companyName}</p>
                 </div>
                 <div className="inputbox">
                   <label htmlFor="userEmail">Email</label>
@@ -217,7 +223,7 @@ const Register = () => {
                     value={formData.userEmail}
                     onChange={handleInputChange}
                   />
-                  <p className="msg text-warning">{fieldErrors.userEmail}</p>
+                  <p className="msg text-warning p-2">{fieldErrors.userEmail}</p>
                 </div>
                 <div className="inputbox">
                   <label htmlFor="userPhone">Mobile</label>
@@ -228,18 +234,34 @@ const Register = () => {
                     value={formData.userPhone}
                     onChange={handleInputChange}
                   />
-                  <p className="msg text-warning">{fieldErrors.userPhone}</p>
+                  <p className="msg text-warning p-2">{fieldErrors.userPhone}</p>
                 </div>
                 <div className="inputbox">
                   <label htmlFor="password">Password</label>
+                  <div className="d-flex mb-2">
                   <input
-                    type="password"
+                    type={showPass ? "text" : "password"}
                     name="password"
                     id="password"
                     value={formData.password}
                     onChange={handleInputChange}
                   />
-                  <p className="msg text-warning">{fieldErrors.password}</p>
+                  <Button
+                        className="eyeBtn"
+                        
+                        title={showPass ? "Hide" : "Show"}
+                        onClick={toggleApiKeyVisibility}
+                      >
+                        <span>
+                          <i
+                            className={`fa ${
+                              showPass ? "fa-eye-slash" : "fa-eye"
+                            }`}
+                          ></i>
+                        </span>
+                      </Button>
+                  </div>
+                  <p className="msg text-warning p-2">{fieldErrors.password}</p>
                 </div>
                 <div className="inputbox">
                   <label htmlFor="confirmPass">Confirm Password</label>
@@ -250,7 +272,7 @@ const Register = () => {
                     value={formData.confirmPass}
                     onChange={handleInputChange}
                   />
-                  <p className="msg text-warning">{fieldErrors.confirmPass}</p>
+                  <p className="msg text-warning p-2">{fieldErrors.confirmPass}</p>
                 </div>
                 <span id="mobileOtpError" className="text-danger">
                   {registerErr}

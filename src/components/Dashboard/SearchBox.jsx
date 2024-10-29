@@ -13,11 +13,11 @@ const SearchBox = () => {
 
 
   return (
-      <div>
-          <HStack spacing={15}>
-          <div style={{ width: "360px !important" }}>
+      <div className='customsearch'>
+          {/* <HStack spacing={15}> */}
+          <div>
             {kyc_status === "Y" ? (
-              <div>
+              <div className='pt-1'>
                 <HStack>
                   <Input
                     size="sm"
@@ -27,8 +27,10 @@ const SearchBox = () => {
                     leftSection={<IconSearch size={16} />}
                     rightSection={<SpotlightSearch />}
                   />
-                  <div dir="ltr">
+                  <div dir="ltr" className='d-none d-lg-block'>
+                    <div className='d-flex'>
                     <Kbd>⌘</Kbd> + <Kbd>K</Kbd>
+                    </div>
                   </div>
                 </HStack>
               </div>
@@ -40,7 +42,7 @@ const SearchBox = () => {
             )}
           </div>
           {/* <Toggle size="sm"   onChange={toggleTimeFormat}></Toggle> */}
-        </HStack>
+        {/* </HStack> */}
       </div>
   )
 }

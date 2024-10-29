@@ -178,14 +178,15 @@ function VirtualAccount() {
           <div className="row mb-3">
             <div className="col-lg-12 col-md-12 col-12">
               <div className="card pb-0 account-details border-0 shadow-lg">
-                <div className="row">
-                  <div className="col-xl-12 col-lg-12 col-md-12 col-12">
-                    <h4 className="bg-transparent mt-0 p-3 h-theme">
+                <h4 className="bg-transparent mt-0 p-3 h-theme mb-0">
                       Virtual Accounts
-                    </h4>
+                  </h4>
+                {/* <div className="row">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-12">
+                    
                   </div>
 
-                  {/* <div className="col-xl-8 col-lg-12 col-md-12 col-12">
+                  <div className="col-xl-8 col-lg-12 col-md-12 col-12">
                     <div className="d-flex justify-content-end align-items-center pt-2">
                       <button className="btn  btn1 mr-2 btn-outline-secondary">
                         Add Virtual Account<i className="fa fa-plus ml-2"></i>
@@ -197,9 +198,9 @@ function VirtualAccount() {
                         Filter <i className="fa fa-filter ml-2"></i>
                       </button>
                     </div>
-                  </div> */}
+                  </div>
 
-                </div>
+                </div> */}
                 <div className="card-body p-3">
                   <div className="row mt-0">
                     {/* <div className="col-lg-5 col-sm-12">
@@ -212,7 +213,7 @@ function VirtualAccount() {
                           </div>
                       </HStack>
                     </div> */}
-                    <div className="col-lg-6 col-sm-12">
+                    {/* <div className="col-lg-6 col-sm-12">
                       <HStack>
                           <div className="d-flex p-2">
                             <input
@@ -231,7 +232,7 @@ function VirtualAccount() {
                             <button
                               className="searchIconBtn"
                               onClick={(e) => {
-                                // e.preventDefault();
+                                e.preventDefault();
                                 console.log(search);
                                 handleSearchAcc();
                               }}
@@ -240,14 +241,14 @@ function VirtualAccount() {
                             </button>
                           </div>
                         </HStack>
-                    </div>
-                    <div className="col-lg-6 col-md-12 col-sm-12 customPaddng">
-                      <HStack>
+                    </div> */}
+                    <div className="col-lg-12 col-md-12 col-sm-12 customPaddng">
+                    <div className="customBtnGrop">
                         <HStack>
                         <CustomButtonGroup appearance="ghost" />
                         {/* </Panel> */}
                         </HStack>
-                      </HStack>
+                      </div>
                     </div>
                   </div>
 

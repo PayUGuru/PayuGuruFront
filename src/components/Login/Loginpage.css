@@ -41,6 +41,20 @@
     background: #FF5900;
     border-radius: 20px;
 }
+.eyeBtn{
+    border: none !important;
+    outline: none !important;
+    padding: 15px 15px 8px 15px !important;
+    /* width: 100%; */
+    font-size: 16px !important;
+    -webkit-user-select: none !important;
+    user-select: none;
+    outline: 2px solid #fe9467 !important;
+    border-radius: 0px 5px 5px 0px !important;
+    /* background: #343a40; */
+    color: #060808 !important;
+    background-color: white !important;
+}
 .enquiry1-section .form .inputbox input {
     border: none;
     outline: none;
