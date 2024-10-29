@@ -177,7 +177,7 @@ function VirtualAccount() {
 
           <div className="row mb-3">
             <div className="col-lg-12 col-md-12 col-12">
-              <div className="card pb-0 account-details border-0 shadow-lg">
+              <div className="card pb-0 h-theme account-details border-0 shadow-lg">
                 <h4 className="bg-transparent mt-0 p-3 h-theme mb-0">
                       Virtual Accounts
                   </h4>

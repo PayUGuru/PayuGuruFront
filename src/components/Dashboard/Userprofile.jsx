@@ -154,9 +154,9 @@ function Userprofile() {
           <div className="row">
             <div className="col-xl-8 col-lg-12 col-md-12 col-12">
               <div className="card pb-0 h-theme account-details border-0 shadow-lg">
-                <div className="col-lg-8 col-md-8 col-12">
-                  <h3 className="bg-transparent h-theme my-0 p-3">User Profile</h3>
-                  <div className="card-body p-0">
+                {/* <div className="col-lg-8 col-md-8 col-12"> */}
+                  <h3 className="mt-0 p-3 h-theme">User Profile</h3>
+                  <div className="card-body p-3">
                     {/* <div className="p-2 mb-2 text-succes">*{userInfo.message}</div> */}
                     <div className="user_profile">
                     <Table maw={580} layout="fixed" mx="auto" className="h-theme">
@@ -246,7 +246,7 @@ function Userprofile() {
                     </div>
                   </div>
                  
-                </div>
+                {/* </div> */}
                 {/* <hr></hr>
                 <div className="col-lg-8 col-md-8 col-12">
                   <h3 className=" mt-0 p-3">Email Subscription</h3>

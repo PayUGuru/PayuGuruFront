@@ -4,7 +4,7 @@ import { Calendar } from '@mantine/dates';
 import { rem } from '@mantine/core';
 import { IconCalendar } from '@tabler/icons-react';
 import { MonthPickerInput } from '@mantine/dates';
-
+import '@mantine/dates/styles.css';
 export function YearPickerInput() {
   const [selected, setSelected] = useState([]);
 

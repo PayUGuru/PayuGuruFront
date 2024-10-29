@@ -97,10 +97,10 @@ function Api() {
           </div>
 
           <div className="row">
-            <div className="col-xl-7 col-lg-9 col-md-8 col-12">
+            <div className="col-xl-8 col-lg-12 col-md-12 col-12">
               <div className="card h-theme pb-0 account-details border-0 shadow-lg">
-                <h4 className="bg-transparent mt-0 p-3">API Settings</h4>
-                <div className="card-body p-3">
+                <h3 className="mt-0 p-3 h-theme">API Settings</h3>
+                <div className="card-body p-5">
                   <div>
                     <div className="d-flex justify-content-between align-items-center">
                       <label className="form-label">

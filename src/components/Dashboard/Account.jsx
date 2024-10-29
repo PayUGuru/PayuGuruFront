@@ -33,11 +33,11 @@ const Account = () => {
             <ProfileTopbar />
           </div>
           <div className="row">
-            <div className="col-xl-6 col-lg-9 col-md-8 col-12">
+            <div className="col-xl-8 col-lg-12 col-md-12 col-12">
               <div className="card pb-0 h-theme account-details border-0 shadow-lg">
 
-                <h4 className="bg-transparent mt-0 p-3">Account Settings</h4>
-                <div className="card-body p-3">
+                <h3 className=" mt-0 p-3 h-theme">Account Settings</h3>
+                <div className="card-body p-5">
                   <form action="#">
                     <div className="mb-3">
                       <label className="form-label">Company Name</label>

@@ -14,13 +14,14 @@ function SystemInfo(){
     // Timeout Activity
     const isInactive = useInactivityTimeout(600000); // 10 minutes
     let navigate = useNavigate();
-    const networkStatus = useNetwork();
+    let networkStatus = useNetwork();
     const API_Version = '0.0.01-beta';
-    const APP_Version =  "unknown";
+    let APP_Version =  " ";
     // let versionToDisplay = "unknown";
     try {
       APP_Version = packageJson.version; // Assuming VERSION is globally defined, e.g., through a bundler
     } catch (error) {
+      APP_Version = "unknown";
         console.log("Cannot get version of application.");
     }
     const os = useOs();
@@ -46,8 +47,8 @@ function SystemInfo(){
                     <div className="row">
                         <div className="col-xl-8 col-lg-12 col-md-12 col-12">
                             <div className="card pb-0 h-theme account-details border-0 shadow-lg">
-                                <h3 className="bg-transparent h-theme my-0 p-3">System Info</h3>
-                                <div className="card-body p-3">
+                                <h3 className="mt-0 p-3 h-theme">System Info</h3>
+                                <div className="card-body p-5">
                                 <Table maw={450} layout="fixed" mx="auto">
                                   <Table.Thead>
                                     <Table.Tr>
