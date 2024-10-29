@@ -19,6 +19,7 @@ import { MdOutlineAccountBalance } from "react-icons/md";
 import UPISvgIcon from "./commonComponents/UpiIcon";
 import UpiModal from "./commonComponents/UpiModel"
 import { FaFileContract } from "react-icons/fa";
+
 function Dashboard() {
   const {theme, toggleTheme} = useTheme();
   const { setKycStatus } = useContext(ApplicationContext);
@@ -387,12 +388,12 @@ function Dashboard() {
                   <div className="row theme h-theme">
                     <div className=" col-xl-4 col-lg-4 col-md-12 col-12">
                       <h5 className="font-weight-bold mt-2">
-                        Account Statement
+                        Latest Transactions
                       </h5>
                     </div>
                     <div className="col-xl-8 col-lg-8 col-md-12 col-12 ">
                       <p className="float-right mt-2">
-                        *Date: 8 Nov-23, 0:00:00 to 2 Dec-23, 23:59:59
+                        {/* *Date: 8 Nov-23, 0:00:00 to 2 Dec-23, 23:59:59 */}
                       </p>
                     </div>
                   </div>
@@ -502,6 +503,7 @@ function Dashboard() {
                         </tr>
                       </tbody>
                     </table>
+                  
                   </div>
                 </div>
               </div>

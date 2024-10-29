@@ -6,7 +6,7 @@ import classes from './StatisticGridIcon.css';
 import SparkleChart from '../Charts/SparkleChart';
 import { ENDPOINTS } from '../../../../utils/apiConfig';
 import { ApplicationContext } from '../../../../context/ApplicationContext';
-
+import {TransactionWidget} from "../Charts/TransactionWidget"
 export function StatisticGrid() {
   const { setKycStatus } = useContext(ApplicationContext);
   const dash_index = ENDPOINTS.DASH_BOARD;
@@ -135,6 +135,12 @@ export function StatisticGrid() {
               {stat.diff > 0 ? 'increase' : 'decrease'} compared to last month
             </Text>
           </Paper>
+
+          {/* <Paper withBorder radius="md" ml={0.4}>
+          <div>
+              <TransactionWidget/>
+          </div>
+          </Paper> */}
         </HStack>
       </div>
     );
@@ -145,10 +151,13 @@ export function StatisticGrid() {
       <div className={classes.root}>
         
           <div className="row">
-            <div className='col-lg-9 col-md-9 col-sm-12'>
+            <div className='col-lg-3 col-md-3 col-sm-12 mt-3'>
               <SimpleGrid cols={{ base: 1, sm: 3 }}>{stats}</SimpleGrid>
             </div>
-            <div className="col-lg-3 col-md-3 col-sm-12">
+            <div className='col-lg-6 col-md-6 col-sm-12 mt-3'>
+              <TransactionWidget/>
+           </div>
+            <div className="col-lg-3 col-md-3 col-sm-12 mt-3 ">
               <div className="img-bg">
                 <img
                   src="https://i.ibb.co/Fx8FHCd/account-card-img.png"
