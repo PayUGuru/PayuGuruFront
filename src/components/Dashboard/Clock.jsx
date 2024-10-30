@@ -14,8 +14,8 @@ const ClockCustomeButton = ({
   time,
   toggleTimeFormat,
 }) => (
-  <ButtonToolbar>
-    <ButtonGroup>
+  // <ButtonToolbar>
+    // <ButtonGroup>
       <HStack>
         <IconButton
           appearance={"ghost"}
@@ -27,17 +27,15 @@ const ClockCustomeButton = ({
               onClick={toggleTimeFormat}
             />
           }
-          style={{ marginLeft: "9rem" }}
+          
         >
           {formatTime(time)}
         </IconButton>
       </HStack>
 
-      {/* <IconButton appearance={'ghost'}> */}
-      {/* {formatTime(time)} */}
-      {/* </IconButton> */}
-    </ButtonGroup>
-  </ButtonToolbar>
+      
+    // </ButtonGroup>
+  // </ButtonToolbar>
 );
 
 const Clock = () => {
@@ -93,7 +91,7 @@ const Clock = () => {
         fontFamily: "monospace",
         fontSize: "1rem",
         textAlign: "center",
-        marginTop: "0.3rem",
+        
       }}
     >
       {/* {formatTime(time)} */}

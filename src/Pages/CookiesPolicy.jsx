@@ -37,7 +37,7 @@ function CookiesPolicy(){
                                     
                                     <div className="row">
                                         <div className="col-lg-6">
-                                            a. Google
+                                            <p className="mb-0">a. Google</p>
                                         </div>
                                         <div className="col-lg-6">
                                             <a href="">Manage Google ad settings</a>
@@ -45,7 +45,7 @@ function CookiesPolicy(){
                                     </div>
                                     <div className="row my-3">
                                         <div className="col-lg-6">
-                                            b. Facebook
+                                           <p className="mb-0"> b. Facebook</p>
                                         </div>
                                         <div className="col-lg-6">
                                             <a href="">Manage Facebook ad settings</a>
@@ -53,7 +53,7 @@ function CookiesPolicy(){
                                     </div>
                                     <div className="row">
                                         <div className="col-lg-6">
-                                        c.	LinkedIn
+                                         <p className="mb-0">c.	LinkedIn</p>
                                         </div>
                                         <div className="col-lg-6">
                                             <a href="">Manage LinkedIn ad settings</a>

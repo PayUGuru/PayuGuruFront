@@ -165,7 +165,7 @@ const UpiListTable = ({
         },
       },
       { Header: "Date", accessor: "date" },
-      { Header: "Time", accessor: "time" },
+      { Header: "Last Transaction", accessor: "time" },
       //   { Header: 'Timestamp', accessor: 'timestamp' },
       { Header: "Bank", accessor: "upi_bank" },
       {
@@ -250,7 +250,7 @@ const UpiListTable = ({
     <>
       <div className="top bg-white mt-0 center">
         <div className="row mt-0 mb-3">
-          <div className="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+          {/* <div className="col-lg-6 col-xl-6 col-md-6 col-sm-12">
          
               <div className="customSearchBox">
                 <input
@@ -269,7 +269,7 @@ const UpiListTable = ({
                 <button
                   className="searchIconBtn"
                   onClick={(e) => {
-                    // e.preventDefault();
+                    e.preventDefault();
                     console.log(search);
                     handleSearchUPI();
                   }}
@@ -278,8 +278,8 @@ const UpiListTable = ({
                 </button>
               </div>
            
-          </div>
-          <div className="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+          </div> */}
+          <div className="col-lg-12 col-xl-12 col-md-12 col-sm-12">
             <div className="customBtnGrop">
               <HStack>
                 <CustomButtonGroup appearance="ghost" />

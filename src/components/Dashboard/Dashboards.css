@@ -8,6 +8,18 @@
     padding-left: 320px;
     padding-right: 40px;
 }
+.customBtnGrop , .customSearchBox {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+   
+ }
+ .customsearch{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+   
+ }
 .top p {
     font-size: 14px;
     font-weight: 500;
@@ -47,7 +59,7 @@
 .account-card {
     width: 100%;
     height: auto;
-    margin: 20px 15px;
+    /* margin: 20px 15px; */
     border-radius: 20px;
     /* background: linear-gradient(91.15deg, #4E72F0 10.36%, #8A8BF9 84.51%); */
 }
@@ -424,4 +436,11 @@
     .main-content .btn-top {
         float: left;
     }
+    .customBtnGrop , .customSearchBox, .customsearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+     }
+     
 }

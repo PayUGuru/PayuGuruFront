@@ -10,7 +10,7 @@ import { ENDPOINTS } from "../../utils/apiConfig.js";
 import lodingImg from "../../assets/img/loading.gif";
 import { ApplicationContext } from "../../context/ApplicationContext";
 import useInactivityTimeout from "../../hooks/useInactivityTimeout";
-import CopyButtonIcon from './commonComponents/CopyButtonIcon'
+import CopyButtonIcon from "./commonComponents/CopyButtonIcon";
 function Api() {
   const { kycStatus } = useContext(ApplicationContext);
   console.log("kyc Status :", kycStatus);
@@ -103,45 +103,48 @@ function Api() {
                 <div className="card-body p-3">
                   <div>
                     <div className="d-flex justify-content-between align-items-center">
-                      <label className="form-label">API Token: api_id   <CopyButtonIcon data={'api_id'} /></label>
+                      <label className="form-label">
+                        API Token: api_id <CopyButtonIcon data={"api_id"} />
+                      </label>
                       <label
                         className="form-label text-info"
                         onClick={getApiToken}
                         style={{ cursor: "pointer" }}
                       >
                         Click here
-                       
                       </label>
-                    
                     </div>
                     <div className="input-group mb-3">
                       <input
                         type={showApiKey ? "text" : "password"}
                         className="form-control mt-0"
                         id="api-token"
-                        value={
-                          apiKey ? apiKey : "XXXXXX-XXXXXX-XXXXXXXX"
-                        }
+                        value={apiKey ? apiKey : "XXXXXX-XXXXXX-XXXXXXXX"}
                       />
-                      
+
                       <Button
                         variant="outlined"
                         title={showApiKey ? "Hide" : "Show"}
                         onClick={toggleApiKeyVisibility}
                       >
                         <span>
-                       <i
-                          className={`fa ${
-                            showClientSecret ? "fa-eye-slash" : "fa-eye"
-                          }`}
-                        ></i>
-                       </span>
-                       
+                          <i
+                            className={`fa ${
+                              showClientSecret ? "fa-eye-slash" : "fa-eye"
+                            }`}
+                          ></i>
+                        </span>
                       </Button>
                       <span>
-                       <i className="mr-4" color="success"
-                        title="Copy" onClick={copyToClipboard}><CopyButtonIcon data={copyToClipboard} /></i>
-                       </span>
+                        <i
+                          className="mr-4"
+                          color="success"
+                          title="Copy"
+                          onClick={copyToClipboard}
+                        >
+                          <CopyButtonIcon data={copyToClipboard} />
+                        </i>
+                      </span>
                       {/* <Button
                         variant="contained"
                         color="success"
@@ -150,17 +153,17 @@ function Api() {
                       >
                         <i className="fa fa-copy"></i>
                       </Button> */}
-                      
                     </div>
                     <div className="d-flex justify-content-between align-items-center">
-                      <label className="form-label">Secret: client_secret  <CopyButtonIcon data={'client_secret'} /> </label>
+                      <label className="form-label">
+                        Secret: client_secret{" "}
+                        <CopyButtonIcon data={"client_secret"} />{" "}
+                      </label>
                       <label
                         className="form-label text-primary"
                         onClick={getApiToken}
                         style={{ cursor: "pointer" }}
-                      >
-                       
-                      </label>
+                      ></label>
                     </div>
                     <div className="input-group mb-3">
                       <input
@@ -171,37 +174,39 @@ function Api() {
                           clientSecret ? clientSecret : "XXXXXX-XXXXXX-XXXXXXXX"
                         }
                       />
-                      
+
                       <Button
                         variant="outlined"
                         title={showClientSecret ? "Hide" : "Show"}
                         onClick={toggleSecretClientVisibility}
                       >
-                       <span>
-                       <i
-                          className={`fa ${
-                            showClientSecret ? "fa-eye-slash" : "fa-eye"
-                          }`}
-                        ></i>
-                       </span>
-                       
+                        <span>
+                          <i
+                            className={`fa ${
+                              showClientSecret ? "fa-eye-slash" : "fa-eye"
+                            }`}
+                          ></i>
+                        </span>
                       </Button>
                       <span>
-                       <i className="mr-4" color="success"
-                        title="Copy" onClick={copyToClipboard}><CopyButtonIcon data={copyToClipboard} /></i>
-                       </span>
+                        <i
+                          className="mr-4"
+                          color="success"
+                          title="Copy"
+                          onClick={copyToClipboard}
+                        >
+                          <CopyButtonIcon data={copyToClipboard} />
+                        </i>
+                      </span>
                       {/* <Button
                         variant="contained"
                         // color="success"
                         title="Copy"
                         onClick={copyToClipboard}
                       > */}
-                        {/* <i className="" onClick={copyToClipboard}><CopyButtonIcon data={copyToClipboard} /></i> */}
+                      {/* <i className="" onClick={copyToClipboard}><CopyButtonIcon data={copyToClipboard} /></i> */}
                       {/* </Button> */}
-                      
                     </div>
-                    
-                    
 
                     <label className="form-label">Whitelisted IPs</label>
                     <div className="mb-3">

@@ -1,8 +1,9 @@
 import React from "react";
 import "./Index.css";
 
+
 const Index = () => {
-  const theme = localStorage.getItem("theme");
+  
 
   return (
     <div>
@@ -44,11 +45,11 @@ const Index = () => {
                 </div>
                 <div className="col-xl-4 col-lg-4 col-md-4 col-6  right-border pl-5 mt-2">
                   <h4>100+</h4>
-                  <p className="text-dark f-14">Happy Customer</p>
+                  <p className="f-14">Happy Customer</p>
                 </div>
                 <div className="col-xl-3 col-lg-3 col-md-4 col-6 mt-2">
                   <h4>100%</h4>
-                  <p className="text-dark f-14">High Security</p>
+                  <p className="f-14">High Security</p>
                 </div>
               </div>
             </div>
@@ -420,6 +421,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       <section className="payment-gateway py-3 mt-80" id="industries">
         <div className="container">
           <div className="row">
@@ -441,7 +443,7 @@ const Index = () => {
           <div className="row mb-5 mt-0">
             <div className="col-lg-6 col-md-12 col-12 mt-5 d-lg-block d-sm-none">
               <div className="card border-0 rounded shadow-sm mt-2 card-bg">
-                <div className="card-body py-auto">
+              <div className="card-body py-auto" >
                   <div className="row mt-0 ">
                     <div className="col-lg-9 col-md-9 col-12">
                       <h5 className="">Education Services</h5>

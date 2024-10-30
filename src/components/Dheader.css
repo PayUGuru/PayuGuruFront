@@ -200,7 +200,7 @@
     width: 260px;
     height:910px;
     background: var(--bg-card);
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
     border: var(--border);
     box-shadow: var(--s);
     padding-top:10px;
@@ -539,7 +539,7 @@
     display: none;
     }
     .sidebar{
-        z-index: 1;
+        z-index: 2;
     }
 }
  

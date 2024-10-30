@@ -149,12 +149,14 @@ h2 {
     margin-top: -100px !important;
 }
 .line-height {
-    color: #1E2A39;
+    /* color: #1E2A39; */
+    color: var(--text-color);
     font-size: 18px;
     font-weight: 600;
     line-height: 38px;
 }
 h4 {
+    color: var(--text-color);
     font-size: 24px;
     font-style: normal;
     font-weight: 800;
@@ -162,6 +164,7 @@ h4 {
 }
 h5 {
     /* color: #1E2A39; */
+    color: var(--text-color);
     font-size: 20px;
     font-weight: 700;
     font-style: normal;
@@ -201,7 +204,8 @@ h5 {
     word-wrap: break-word;
 }
 .f-21 {
-    color: #1E2A39;
+    /* color: #1E2A39; */
+    color: var(--text-color);
     font-size: 18px;
     font-weight: 600;
     line-height: 36px;
@@ -281,7 +285,7 @@ h5 {
         line-height: 32px;
     }
     .card-bg {
-        background-image: url(https://i.ibb.co/CscZppc/card-bg.jpg);
+        /* background-image: url(https://i.ibb.co/CscZppc/card-bg.jpg); */
         border: 1px solid #c6d1eb !important;
         background-position: 100% 0;
         background-size: 200% 100%;
@@ -399,7 +403,10 @@ h5 {
     border: 1px solid #D0DCEE;
     padding: 5px 20px;
     margin-bottom: 30px;
-    background: #FFF;
+    /* background: #FFF; */
+    background-color: var(--bg-account-card) !important;
+    color: var(--text-color) !important
+
   }
   .accordion .accordion-item[aria-expanded='true']  {
      border: 1px solid #fd6525!important;
@@ -441,13 +448,14 @@ h5 {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    color: #1E2A39;
+    
+    color: var(--text-color) !important
   }
   
   .accordion button .icon {
     display: inline-block;
     position: absolute;
-    color: #1e2a39;
+    color: var(--text-color) !important;
     top: 16px;
     right: 0;
     width: 32px;

@@ -24,23 +24,22 @@ const DashboardTopbar = () => {
     <>
       <div className={`row mt-0 h-theme ${theme}`}>
       <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-         
-         <SearchBox/>
+        <SearchBox/>
        </div>
-        <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12">
-         <div className="customClock">
-            <Clock/>
-          </div>
-        </div>
-        <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+        <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12">
         {kyc_status === "N" && (
-            <div className="d-flex justify-content-center">
+            <div className="customBtnGrop">
             <button type="button" className="btn btn-top" onClick={docsModalOpen}>
               Docs Required
             </button>
             </div>
           )}
           
+        </div>
+        <div className="col-xl-2 col-lg-2 col-md-12 col-sm-12">
+         <div className="customClock">
+            <Clock/>
+          </div>
         </div>
       </div>
 

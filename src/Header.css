@@ -3,6 +3,11 @@
   margin-left: 4px;
 
 }
+.customThemeToggle{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
 
 [data-theme="light"] {
     --bg-color: #ffffff;
@@ -36,7 +41,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3000;
     padding: 5px 100px;
     box-sizing: border-box;
     transition: .5s;
@@ -82,7 +87,8 @@ background-color: var(--bg-slate-900);
     background-image: url("https://i.ibb.co/drvnvhv/bar.png");
 }
 ul li {
-    color: #1E2A39;
+    color: var(--text-color);
+    /* color: #1E2A39; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -130,6 +136,11 @@ ul li {
         font-size: 18px;
         color: var(--text-color);
         text-decoration: none;
+    }
+    .customThemeToggle{
+        display: flex;
+        justify-content: start;
+        align-items: baseline;
     }
 }
 @media (min-width: 992px){

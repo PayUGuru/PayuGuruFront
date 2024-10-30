@@ -23,6 +23,9 @@ const Login = () => {
   const [mobileNotVerified, setMobileNotVerified] = useState(false);
   const [emailNotVerified, setEmailNotVerified] = useState(false);
   const clientId = localStorage.getItem("clientId");
+  const [showPass, setShowPass] = useState(false);
+  
+
   let navigate = useNavigate();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const mobileRegex = /^\+?[1-9]\d{1,14}$/;
@@ -39,6 +42,10 @@ const Login = () => {
     } else {
       setMessage('Invalid Input');
     }
+  };
+
+  const toggleApiKeyVisibility = () => {
+    setShowPass(!showPass);
   };
 
   const handleChange = (e) => {
@@ -294,15 +301,33 @@ const Login = () => {
                 </p>
                 <div className="inputbox">
                   <label>Mobile</label>
+                  <div >
                   <input type="text" name="mobile" id="mobileOrEmail"  value={input}
                   onChange={handleChange}
                   placeholder="Enter email or mobile number"/>
-                  <p className="msg text-warning">{fieldErrors.userMobile} {message}</p>
+                  </div>
+                  <p className="msg text-warning p-2">{fieldErrors.userMobile} {message}</p>
                 </div>
                 <div className="inputbox">
                   <label>Password</label>
-                  <input type="password" name="password" id="password"  placeholder="Enter your password" value={password}
+                  <div className="d-flex mb-2">
+                  <input type={showPass ? "text" : "password"} name="password" id="password"  placeholder="Enter your password" value={password}
                   onChange={handlePassword}/>
+                  <Button
+                        className="eyeBtn"
+                        
+                        title={showPass ? "Hide" : "Show"}
+                        onClick={toggleApiKeyVisibility}
+                      >
+                        <span>
+                          <i
+                            className={`fa ${
+                              showPass ? "fa-eye-slash" : "fa-eye"
+                            }`}
+                          ></i>
+                        </span>
+                      </Button>
+                    </div>          
                   <p className="msg text-warning">{fieldErrors.password}</p>
                 </div>
                 <span className="text-warning">{loginErr}</span>
