@@ -54,7 +54,7 @@ const Routing = () => {
             <Route path="success" element={<Success />} />
             <Route path="otppage" element={<Otppage />} />
             <Route path="resetpassword" element={<Resetpassword />} />
-            <Route path="mmlpolicy" element={<AmlPolicy />} />
+            <Route path="AmlPolicy" element={<AmlPolicy />} />
             <Route path="cookiespolicy" element={<CookiesPolicy />} />
             <Route path="privacypolicy" element={<PrivacyPolicy />} />
             <Route path="redressalpolicy" element={<RedressalPolicy />} />

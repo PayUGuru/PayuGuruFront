@@ -96,7 +96,7 @@
   }
   
 .box8 {
-    background-color: #fafbff;
+    /* background-color: #fafbff; */
     padding: 0rem 2rem;
     margin-top: 7rem !important;
     margin-bottom: 20px;
@@ -113,6 +113,7 @@
 }
 h5 {
     /* color: #1E2A39; */
+    color: var(--text-color);
     font-size: 20px;
     font-weight: 700;
     font-style: normal;

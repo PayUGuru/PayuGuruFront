@@ -87,7 +87,8 @@ background-color: var(--bg-slate-900);
     background-image: url("https://i.ibb.co/drvnvhv/bar.png");
 }
 ul li {
-    color: #1E2A39;
+    color: var(--text-color);
+    /* color: #1E2A39; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
