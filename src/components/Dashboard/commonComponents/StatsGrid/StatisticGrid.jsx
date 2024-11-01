@@ -86,7 +86,18 @@ export function StatisticGrid() {
   // );
 
   // Sample trend data, update with actual values from the state or API
-  const positiveTrend = [10, 20, 40, 20, 40, 10, 50];  // Replace with dynamic data
+  const positiveTrend = [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ];  // Replace with dynamic data
   const negativeTrend = [50, 40, 20, 40, 20, 40, 10];  // Replace with dynamic data
   const neutralTrend = [10, 20, 40, 20, 40, 10, 50, 5, 10];  // Replace with dynamic data
 

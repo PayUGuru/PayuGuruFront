@@ -45,8 +45,8 @@ const transactions = [
           1
         ]
       },
-  // { name: 'Silver', symbol: 'Silver', change: '-0.57%', value: '33.59', isPositive: false, data: [33.8, 33.7, 33.6, 33.5, 33.59] },
-  // { name: 'USD/INR', symbol: 'USD/INR', change: '-0.06%', value: '84.05', isPositive: false, data: [84.1, 84.0, 84.05, 84.03, 84.05] },
+  { name: 'Silver', symbol: 'Silver', change: '-0.57%', value: '33.59', isPositive: false, data: [33.8, 33.7, 33.6, 33.5, 33.59] },
+  { name: 'USD/INR', symbol: 'USD/INR', change: '-0.06%', value: '84.05', isPositive: false, data: [84.1, 84.0, 84.05, 84.03, 84.05] },
 ];
 
 export function TransactionWidget() {
@@ -70,7 +70,7 @@ export function TransactionWidget() {
               >
                 {transaction.isPositive ? <FaArrowUp /> : <FaArrowDown />} {transaction.change}
               </span>
-              <span className="transaction-value">{transaction.value}</span>
+              <span className="transaction-value">₹ {transaction.value}</span>
             </div>
             <div className="transaction-chart">
               <Sparklines data={transaction.data} width={80} height={20} margin={5}>

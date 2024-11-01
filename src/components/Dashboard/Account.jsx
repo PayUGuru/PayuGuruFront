@@ -55,7 +55,7 @@ const Account = () => {
                     </div>
                   </form>	
                 </div>
-                <hr></hr>
+                {/* <hr></hr> */}
              {/* <h4 className="bg-transparent mt-0 p-3">Balance Settings</h4>
                     <div className="card-body p-3">
                         <form action="#">
