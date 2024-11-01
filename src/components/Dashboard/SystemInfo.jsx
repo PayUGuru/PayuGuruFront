@@ -16,6 +16,7 @@ function SystemInfo(){
     let navigate = useNavigate();
     let networkStatus = useNetwork();
     const API_Version = '0.0.01-beta';
+<<<<<<< HEAD
     let APP_Version =  " ";
     // let versionToDisplay = "unknown";
     try {
@@ -24,6 +25,9 @@ function SystemInfo(){
       APP_Version = "unknown";
         console.log("Cannot get version of application.");
     }
+=======
+    const APP_Version = 'v1.0.0';
+>>>>>>> d78ef42e7eb8fad7c872f279e0957c65162b9259
     const os = useOs();
     useEffect(() => {
         if (isInactive) {
