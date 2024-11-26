@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { Modal, TextInput, Select, Button } from '@mantine/core';
 
-export function QRCodeModal({ isOpen, onClose }) {
+export function QrCodeGenerateModel({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     merchantName: '',
     paymentType: 'mobile',
