@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChatIcon = () => {
+const ChatIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

@@ -1,4 +1,4 @@
-export const Explore = () => {
+export const Explore = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

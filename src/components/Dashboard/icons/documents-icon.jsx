@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DocumentsIcon = () => {
+const DocumentsIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="20"

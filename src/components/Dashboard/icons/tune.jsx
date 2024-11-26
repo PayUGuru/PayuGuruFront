@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tune = () => {
+const Tune = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

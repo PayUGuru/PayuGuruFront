@@ -1,4 +1,4 @@
-export const Fitness = () => {
+export const Fitness = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TransactionsIcon = () => {
+export const TransactionsIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="20"

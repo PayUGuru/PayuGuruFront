@@ -1,4 +1,4 @@
-export const Unlike = () => {
+export const Unlike = ({ size, style, ...props }) => {
     return (
       <svg
         width="15"

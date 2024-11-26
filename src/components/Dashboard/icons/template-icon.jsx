@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TemplateIcon = () => {
+const TemplateIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Headphone = () => {
+const Headphone = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

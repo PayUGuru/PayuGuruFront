@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TrashIcon = () => {
+const TrashIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

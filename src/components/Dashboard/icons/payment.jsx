@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Payment = ({ selected }) => {
+const Payment = ({ size, style, selected, ...props }) => {
   return (
     <svg
       width="24"

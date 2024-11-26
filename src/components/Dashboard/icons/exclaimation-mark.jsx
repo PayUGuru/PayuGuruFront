@@ -1,4 +1,4 @@
-export const ExclaimationMark = () => {
+export const ExclaimationMark = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

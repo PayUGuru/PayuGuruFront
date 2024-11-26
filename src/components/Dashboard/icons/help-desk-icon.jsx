@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HelpDeskIcon = () => {
+const HelpDeskIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="20"

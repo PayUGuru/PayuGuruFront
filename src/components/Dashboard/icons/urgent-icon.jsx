@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const UrgentIcon = () => {
+export const UrgentIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="22"

@@ -51,7 +51,7 @@ const transactions = [
 
 export function TransactionWidget() {
   return (
-    <div className="transaction-widget">
+    <div className=" h-theme transaction-widget">
       <div className="header">
         <span className="title">Transactional View</span>
         {/* <span className="menu-icon">...</span> */}

@@ -74,3 +74,31 @@ npm run docker:build
 ```bash
 npm run 
 ```
+# Note:
+
+### Extra Tip Package Updates
+
+```bash
+npm install -g npm-check-updates
+```
+```bash
+ncu
+```
+```bash
+ncu -u
+```
+```bash
+npm update --save
+```
+## OR
+
+```bash
+npm install
+```
+
+
+
+
+
+
+

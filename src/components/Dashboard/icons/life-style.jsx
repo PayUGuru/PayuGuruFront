@@ -1,4 +1,4 @@
-export const LifeStyle = () => {
+export const LifeStyle = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

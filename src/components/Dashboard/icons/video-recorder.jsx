@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VideoRecorderIcon = () => {
+const VideoRecorderIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

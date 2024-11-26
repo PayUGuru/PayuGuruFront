@@ -1,4 +1,4 @@
-export const CreditCard = () => {
+export const CreditCard = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

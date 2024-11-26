@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Home = ({ ...props }) => {
+export const Home = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

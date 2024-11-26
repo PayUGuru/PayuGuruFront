@@ -1,4 +1,4 @@
-export const CheckBadge = () => {
+export const CheckBadge = ({ size, style, ...props }) => {
     return (
       <svg
         width="20"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Wallet = () => {
+const Wallet = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Category({ selected }) {
+function Category({ size, style, selected,...props }) {
   return (
     <svg
       width="24"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FolderDuotone = () => {
+const FolderDuotone = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

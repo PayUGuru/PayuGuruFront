@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PremiumBadge = () => {
+const PremiumBadge = ({ size, style, ...props }) => {
   return (
     <svg
       width="18"

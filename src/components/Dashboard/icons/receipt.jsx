@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Receipt = () => {
+const Receipt = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

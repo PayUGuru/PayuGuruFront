@@ -1,4 +1,4 @@
-export const Compass = () => {
+export const Compass = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

@@ -1,4 +1,4 @@
-export const Comment = () => {
+export const Comment = ({ size, style, ...props }) => {
     return (
       <svg
         width="13"

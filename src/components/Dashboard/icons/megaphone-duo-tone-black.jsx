@@ -1,4 +1,4 @@
-export const MegaPhoneDuoToneBlack = () => {
+export const MegaPhoneDuoToneBlack = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

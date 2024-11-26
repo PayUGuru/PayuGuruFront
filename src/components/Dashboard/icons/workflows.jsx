@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Workflows = ({ selected }) => {
+const Workflows = ({ size, style,selected, ...props }) => {
   return (
     <svg
       width="24"

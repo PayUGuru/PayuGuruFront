@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MarketPlaceIcon = () => {
+const MarketPlaceIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

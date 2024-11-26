@@ -1,4 +1,4 @@
-export const EmptyCircle = () => {
+export const EmptyCircle = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

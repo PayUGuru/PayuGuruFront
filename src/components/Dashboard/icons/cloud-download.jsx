@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CloudDownload = ({ selected }) => {
+const CloudDownload = ({ size, style, selected, ...props }) => {
   return (
     <svg
       width="24"

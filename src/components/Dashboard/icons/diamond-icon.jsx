@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DiamondIcon = () => {
+const DiamondIcon = ({ size, style, ...props }) => {
   return (
     <svg
       viewBox="0 0 24 24"

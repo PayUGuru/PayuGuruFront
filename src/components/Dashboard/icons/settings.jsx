@@ -1,4 +1,4 @@
-export const Settings = () => {
+export const Settings = ({ size, style, ...props }) => {
     return (
       <svg
         width="20"

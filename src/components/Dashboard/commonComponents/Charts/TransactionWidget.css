@@ -1,10 +1,12 @@
 .transaction-widget {
     width: 420px;
-    background: white;
+    /* background: white; */
+    font-family:Greycliff CF, var(--mantine-font-family);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
     font-family: Arial, sans-serif;
   }
   
@@ -12,17 +14,23 @@
     display: flex;
     justify-content: space-between;
     padding: 3px 3px;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    /* border-bottom: 1px solid #e0e0e0; */
   }
   
   .title {
     font-weight: bold;
-    color: #333;
+    /* color: #333; */
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
     /* font-size: small; */
   }
   
   .menu-icon {
-    color: #888;
+    /* color: #888; */
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
     cursor: pointer;
   }
   
@@ -34,7 +42,9 @@
     display: flex;
     justify-content: space-between;
     padding: 6px 0;
-    border-bottom: 1px solid #f0f0f0;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    /* border-bottom: 1px solid #f0f0f0; */
   }
   
   .transaction-info {
@@ -42,9 +52,13 @@
     flex-direction: column;
   }
   
+
+
   .transaction-name {
     font-weight: bold;
-    color: #333;
+  
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
     font-size: 0.65em;;
   }
   
@@ -79,6 +93,7 @@
     font-size: 0.6em;
   }
   
+
   .transaction-chart {
     width: 80px;
     margin-top: 4px;
@@ -100,3 +115,11 @@
     text-decoration: underline;
   }
   
+  /* .account-card {
+    background-color: var(--bg-account-card) !important;
+  }
+
+  .m_1b7284a3 {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+  } */

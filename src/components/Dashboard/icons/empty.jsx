@@ -1,4 +1,5 @@
-export const Empty = () => {
+
+export const Empty = ({ size, style, ...props }) => {
     return (
       <svg
         width="394"

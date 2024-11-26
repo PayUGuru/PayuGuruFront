@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Warning = () => {
+const Warning = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

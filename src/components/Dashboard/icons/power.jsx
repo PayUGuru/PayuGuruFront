@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Power = () => {
+const Power = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

@@ -1,10 +1,15 @@
-export const BadgePlus = () => {
+import { rem } from '@mantine/core';
+
+export const BadgePlus = ({ size, style, ...others }) => {
     return (
       <svg
         width="16"
         height="16"
         viewBox="0 0 16 16"
         fill="none"
+        id="badge-plus"
+        style={{ width: rem(size), height: rem(size), ...style }} 
+        {...others}
         xmlns="http://www.w3.org/2000/svg"
       >
         <g clip-path="url(#clip0_7770_2913)">

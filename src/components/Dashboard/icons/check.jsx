@@ -1,4 +1,4 @@
-export const Check = () => {
+export const Check = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

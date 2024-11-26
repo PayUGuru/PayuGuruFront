@@ -173,7 +173,7 @@ const Header = () => {
                   </div>
               </li>
                 <li className="nav-item my-auto px-2">
-             {/* <NotificationButton/>*/}
+             <NotificationButton/>
               </li>
               <li className="nav-item my-auto">
                 <Link className="nav-link" to="/docs">API Docs</Link>

@@ -1,4 +1,4 @@
-export const CarotSort = () => {
+export const CarotSort = ({ size, style, ...props }) => {
     return (
       <svg
         width="21"

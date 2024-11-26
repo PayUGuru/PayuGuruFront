@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FolderPlusDuotine = () => {
+const FolderPlusDuotine = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

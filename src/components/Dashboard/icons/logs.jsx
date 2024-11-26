@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Logs = ({ selected }) => {
+const Logs = ({ size, style,selected, ...props }) => {
   return (
     <svg
       width="24"

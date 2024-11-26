@@ -1,4 +1,4 @@
-export const Envalope = () => {
+export const Envalope = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

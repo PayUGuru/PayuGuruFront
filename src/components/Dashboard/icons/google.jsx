@@ -1,4 +1,4 @@
-export const Google = () => {
+export const Google = ({ size, style, ...props }) => {
     return (
       <svg
         width="17"

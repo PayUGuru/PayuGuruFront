@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TimerIcon = () => {
+const TimerIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="21"

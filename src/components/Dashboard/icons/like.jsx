@@ -1,4 +1,4 @@
-export const Like = () => {
+export const Like = ({ size, style, ...props }) => {
     return (
       <svg
         width="15"

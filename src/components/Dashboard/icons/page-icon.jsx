@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageIcon = () => {
+const PageIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

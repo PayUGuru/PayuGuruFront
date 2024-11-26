@@ -1,4 +1,4 @@
-export const Message = ({ ...props }) => {
+export const Message = ({ size, style, ...props }) => {
     return (
       <svg
         width="31"

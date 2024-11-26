@@ -1,4 +1,4 @@
-export const SocialMedia = () => {
+export const SocialMedia = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

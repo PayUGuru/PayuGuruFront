@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DashboardIcon = () => {
+const DashboardIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

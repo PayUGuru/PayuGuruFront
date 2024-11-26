@@ -1,4 +1,4 @@
-export const Document = () => {
+export const Document = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

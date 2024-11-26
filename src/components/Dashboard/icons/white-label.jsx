@@ -1,4 +1,4 @@
-export const WhiteLabel = () => {
+export const WhiteLabel = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

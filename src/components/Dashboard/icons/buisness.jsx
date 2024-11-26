@@ -1,4 +1,4 @@
-export const Buisness = () => {
+export const Buisness = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

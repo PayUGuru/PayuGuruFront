@@ -1,10 +1,14 @@
-export const AffiliateDuoToneBlack = () => {
+import { rem } from '@mantine/core';
+
+export const AffiliateDuoToneBlack = ({ size, style, ...others }) => {
     return (
       <svg
         width="24"
         height="25"
         viewBox="0 0 24 25"
         fill="none"
+        id="affiliate-duo-tone-black"
+        style={{ width: rem(size), height: rem(size), ...style }} {...others}
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle cx="14" cy="7.5" r="4" fill="#545454" />

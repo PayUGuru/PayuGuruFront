@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MoneyIcon = () => {
+const MoneyIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

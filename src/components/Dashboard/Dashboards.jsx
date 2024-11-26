@@ -248,6 +248,36 @@ function Dashboard() {
     '2022-02-26'
   ];
   
+  const transactions = [
+    {
+      id: 1,
+      date: '2024-02-20',
+      description: 'Payment received from John Doe',
+      amount: 15000,
+      status: 'completed',
+    },
+    {
+      id: 2,
+      date: '2024-02-19',
+      description: 'Refund processed',
+      amount: -2500,
+      status: 'completed',
+    },
+    {
+      id: 3,
+      date: '2024-02-19',
+      description: 'Payment received from Alice Smith',
+      amount: 8000,
+      status: 'pending',
+    },
+    {
+      id: 4,
+      date: '2024-02-18',
+      description: 'Subscription payment',
+      amount: 12000,
+      status: 'completed',
+    },
+  ];
   const copyToClipboard = async () => {
     const tokenInput = document.getElementById("upi_id");
     try {
@@ -505,6 +535,52 @@ function Dashboard() {
                     </table>
                   
                   </div>
+                   {/* <div className="table-responsive overflow-x-auto">
+                      <table className="min-w-full divide-y divide-gray-200">
+                        <thead>
+                          <tr>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Date
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Description
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Amount
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Status
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-200">
+                          {transactions.map((transaction) => (
+                            <tr key={transaction.id}>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {transaction.date}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                {transaction.description}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm">
+                                <span className={transaction.amount > 0 ? 'text-green-600' : 'text-red-600'}>
+                                  ₹{Math.abs(transaction.amount).toLocaleString()}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm">
+                                <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                                  transaction.status === 'completed'
+                                    ? 'bg-green-100 text-green-800'
+                                    : 'bg-yellow-100 text-yellow-800'
+                                }`}>
+                                  {transaction.status}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div> */}
                 </div>
               </div>
             </div>

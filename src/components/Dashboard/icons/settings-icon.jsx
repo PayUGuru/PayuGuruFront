@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SettingsIcon = () => {
+const SettingsIcon = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

@@ -1,4 +1,4 @@
-export const IDuotoneBlack = () => {
+export const IDuotoneBlack = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

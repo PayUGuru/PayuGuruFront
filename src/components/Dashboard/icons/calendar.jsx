@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Calendar = () => {
+const Calendar = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

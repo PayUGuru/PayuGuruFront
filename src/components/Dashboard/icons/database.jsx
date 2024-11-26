@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Database = () => {
+const Database = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

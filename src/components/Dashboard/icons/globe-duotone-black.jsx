@@ -1,4 +1,4 @@
-export const GlobeDuoToneBlack = () => {
+export const GlobeDuoToneBlack = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"

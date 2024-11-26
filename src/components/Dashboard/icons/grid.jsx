@@ -1,4 +1,4 @@
-export const Grid = () => {
+export const Grid = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

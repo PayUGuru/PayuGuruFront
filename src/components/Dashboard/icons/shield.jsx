@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Shield = () => {
+const Shield = ({ size, style, ...props }) => {
   return (
     <svg
       width="24"

@@ -1,4 +1,4 @@
-export const MegaPhone = () => {
+export const MegaPhone = ({ size, style, ...props }) => {
     return (
       <svg
         width="16"

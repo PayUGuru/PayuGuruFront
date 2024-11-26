@@ -1,4 +1,4 @@
-export const Links = () => {
+export const Links = ({ size, style, ...props }) => {
     return (
       <svg
         width="24"
