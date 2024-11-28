@@ -33,6 +33,7 @@ import TermsandCondition from './Pages/TermsandCondition';
 import ProtectedRoute from './ProtectedRoute'; // Import ProtectedRoute components
 import Docsmain from './docs/Docsmain';
 import SystemInfo from './components/Dashboard/SystemInfo';
+import PaymentCollect from './components/Dashboard/PaymentCollect';
 
 const Routing = () => {
   // const [showLanguageSwitcher, setShowLanguageSwitcher] = useState(false);
@@ -127,6 +128,11 @@ const Routing = () => {
             <Route path="enquiry" element={
               <ProtectedRoute>
                 <Enquiry />
+              </ProtectedRoute>
+            } />
+            <Route path="paymentCollect" element={
+              <ProtectedRoute>
+                <PaymentCollect />
               </ProtectedRoute>
             } />
           </Route>

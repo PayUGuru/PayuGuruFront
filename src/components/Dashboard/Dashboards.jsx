@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Row, Col, Panel, ButtonGroup, HStack } from 'rsuite';
 import "./Dashboards.css";
 import Dheader from "../Dheader";
@@ -7,6 +7,7 @@ import lodingImg from "../../assets/img/loading.gif";
 import { useNavigate } from "react-router-dom";
 import { ApplicationContext } from "../../context/ApplicationContext"; 
 import { ENDPOINTS } from "../../utils/apiConfig";
+import Pagination from "../Pagination";
 import DashboardTopbar from "./commonComponents/DashboardTopbar";
 import { Button } from "@mui/material";
 import useInactivityTimeout from "../../hooks/useInactivityTimeout";
@@ -19,6 +20,8 @@ import { MdOutlineAccountBalance } from "react-icons/md";
 import UPISvgIcon from "./commonComponents/UpiIcon";
 import UpiModal from "./commonComponents/UpiModel"
 import { FaFileContract } from "react-icons/fa";
+import AccountStatementTable from "./commonComponents/AccountStatementTable";
+import { FetchTransactonList } from "./commonComponents/data";
 function Dashboard() {
   const {theme, toggleTheme} = useTheme();
   const { setKycStatus } = useContext(ApplicationContext);
@@ -30,12 +33,96 @@ function Dashboard() {
   const [dashboardIndex, setDashboardIndex] = useState({});
   const [mainBalance, setMainBalance] = useState("");
   const [totalSettalment, setTotalSettalment] = useState("");
-  const [AccountTransactions, setAccountTransactions] = useState("");
   const [upiID, setUpiID] = useState('');
   const [qrCodeURL, setQrCodeURL] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [accountDetails, setAccountDetials] = useState({});
   let navigate = useNavigate();
+
+  const [AccountTransactions, setAccountTransactions] = useState("");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
+  const [remaining, setRemaining] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [isFetching, setIsFetching] = useState(false);
+  const [sortBy, setSortBy] = useState("");
+  const [sortDirection, setSortDirection] = useState("");
+
+  const [search, setSearch] = useState("");
+
+
+  const fetchData = useCallback(
+    async (page = 1, loadMore = false) => {
+      setLoader(true);
+      try {
+        const skipItems = (page - 1) * itemsPerPage;
+        const response = await FetchTransactonList(skipItems, itemsPerPage);
+
+        const paginationData = await response.data.pagination;
+        const tasksData = await response.data.virtual_account_list;
+
+        setTotalItems(paginationData.totalCount);
+        setCurrentPage(paginationData.currentPage);
+        setRemaining(paginationData.remainingItems);
+        if (!loadMore) {
+          setAccountTransactions(JSON.parse(tasksData));
+        } else {
+          setAccountTransactions((prevList) => [...prevList, ...JSON.parse(tasksData)]);
+        }
+      } catch (error) {
+        console.error("Error:", error.message);
+      } finally {
+        setLoader(false);
+      }
+    },
+    [itemsPerPage, sortBy, sortDirection]
+  );
+
+  const toggleStatus = async (account) => {
+    try {
+      let accountNumber = account.AC_id;
+      const response = await fetch(ENDPOINTS.UPDATE_VIRTUAL_ACCOUNT_STATUS, {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          AC_id: accountNumber,
+          sessionid: sessionid,
+        }),
+      });
+
+      const resData = await response.json();
+      if (resData && resData.StatusCodes === "00") {
+        setAccountTransactions((prevList) =>
+          prevList.map((item) =>
+            item.AC_id === accountNumber
+              ? {
+                  ...item,
+                  status: item.status === "enabled" ? "disabled" : "enabled",
+                }
+              : item
+          )
+        );
+        fetchData(currentPage); // Refresh the data after updating the status
+      } else {
+        console.log("status code not match");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleSort = (column) => {
+    const direction = sortDirection === "asc" ? "desc" : "asc";
+    setSortBy(column);
+    setSortDirection(direction);
+    fetchData(1, false); // Fetch data with new sorting
+  };
+
+  
 
   useEffect(() => {
     dashboardIndexData();
@@ -444,6 +531,7 @@ function Dashboard() {
                     </Col>
                   </Row>*/}
                   </div>
+
                   <div className="table-responsive">
                     <table
                       id="example"
@@ -503,6 +591,31 @@ function Dashboard() {
                       </tbody>
                     </table>
                   </div>
+
+                  {/* <div className="table-responsive">
+                    {loader ? (
+                      <div className="text-center p-5">
+                        <div
+                          className="spinner-border text-primary"
+                          role="status"
+                        >
+                          <span className="sr-only">Loading...</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <AccountStatementTable 
+                        data={AccountTransactions}
+                        toggleStatus={toggleStatus}
+                        onSort={handleSort}
+                        sortBy={sortBy}
+                        sortDirection={sortDirection}
+                        />
+                        
+                      </>
+                    )}
+                  </div> */}
+
                 </div>
               </div>
             </div>

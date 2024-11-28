@@ -1,25 +1,13 @@
+
 import React, { useMemo, useState } from "react";
-import { FiSearch } from "react-icons/fi";
-// Import Axios
 import { useTable, useSortBy } from "react-table";
-import { ENDPOINTS } from "../../../utils/apiConfig";
-// import generatePDF from '../../../hooks/usePdfAccountListGenerate'
-
-import Panel from "rsuite/Panel";
-
 import "rsuite/Panel/styles/index.css";
-import DateRangeToolBar from "../PageToolbar";
 import { HStack, Stack, Toggle, Text } from "rsuite";
-import CheckIcon from "@rsuite/icons/Check";
-import CloseIcon from "@rsuite/icons/Close";
 import "rsuite/Toggle/styles/index.css";
 import "rsuite/Stack/styles/index.css";
-import CustomButtonGroup from "./TableIconButtons";
 import CopyButtonIcon from "./CopyButtonIcon";
-import VirtualAccPopUp from "./VirtualAccPopUp";
-import { Button } from "@mui/material";
 
-const VirtualAccountTable = ({
+const AccountStatementTable = ({
   data,
   toggleStatus,
   onSort,
@@ -30,12 +18,6 @@ const VirtualAccountTable = ({
   const [acList, setAcList] = useState([]);
   const sessionid = sessionStorage.getItem("sessionid");
   const [loader, setLoader] = useState(false);
-
-  const [modalOpened, setModalOpened] = useState(false);
-
-  const [popupData, setPopupData] = useState(null);
-
-  
   // Filter data based on search input
   const filteredData = useMemo(() => {
     return data.filter((item) => {
@@ -49,43 +31,6 @@ const VirtualAccountTable = ({
     // rowData.preventDefault();
     toggleStatus(rowData); // Call the function from parent
   };
-
-  // const handleSearchAcc = async () => {
-  //   setLoader(true);
-
-  //   try {
-  //     const response = await fetch(ENDPOINTS.SEARCH_VIRTUAL_ACC, {
-  //       method: "POST",
-  //       headers: {
-  //         accept: "application/json",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         sessionid: sessionid,
-  //         AC_id: search,
-  //       }),
-  //     });
-
-  //     const resData = await response.json();
-  //     console.log("====================================");
-  //     console.log("Account Search Result: ", resData);
-  //     console.log("====================================");
-  //     setLoader(false);
-
-  //     if (resData.StatusCodes) {
-  //       if (resData.StatusCodes === "00") {
-  //         // Convert the single object response to an array
-  //         const responseArray = [resData.responsed];
-  //         setAcList(responseArray);
-  //       } else {
-  //         console.log(resData.mess.message);
-  //       }
-  //     }
-  //   } catch (error) {
-  //     setLoader(false);
-  //     console.error("Error during account search:", error);
-  //   }
-  // };
 
   const columns = React.useMemo(
     () => [
@@ -104,14 +49,21 @@ const VirtualAccountTable = ({
         accessor: "AC_id",
         Cell: ({ row }) => (
           <div>
-            <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {setModalOpened(true); setPopupData(row.original)}}
-            // onClick={() => handlePopupOpen(row.original)}
-          >
-            View ACC
-          </Button>
+            <HStack>
+              <Text
+                className="p-2 border-2"
+                style={{ color: "var(--bg-text)" }}
+              >
+                {row.original.AC_id}
+              </Text>
+              <CopyButtonIcon
+                data={
+                  row.original.AC_id === row.original.AC_id
+                    ? row.original.AC_id
+                    : ""
+                }
+              />
+            </HStack>
           </div>
         ),
       },
@@ -142,20 +94,7 @@ const VirtualAccountTable = ({
           >
             {row.original.ACstatus === "Y" ? "Active" : "Disable"}
           </button>
-          //   <div>
-          //   <Stack spacing={10} childrenRenderMode="clone" alignItems="center" justifyContent="center">
-          // {/* <Toggle size="lg">Large</Toggle>
-          // <Toggle size="md">Medium</Toggle> */}
-          //       <Toggle size="md" color="green"  onChange={(e) => {
-          //     // e.preventDefault();
-          //     handleStatusToggle(row.original);
-          //   }}
-          //   loading={!row.original.ACstatus}
-          //   defaultChecked={row.original.ACstatus === 'Y'}// Reflects the current status
-          //   checkedChildren={<CheckIcon />}
-          //   unCheckedChildren={<CloseIcon />}></Toggle>
-          //     </Stack>
-          // </div>
+          
         ),
       },
     ],
@@ -194,56 +133,14 @@ const VirtualAccountTable = ({
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: filteredData }, useSortBy);
+  
+
 
   return (
     <>
       {/* <Stack> */}
       <div className="top bg-white mt-0 center">
-        {/* <div className="row mt-0">
-          <div className="col-lg-12 col-md-12 col-12">
-            <HStack>
-              <HStack>
-                <div
-                  className="d-flex mr-3 p-3 center"
-                  style={{ width: "450px" }}
-                >
-                  <DateRangeToolBar />
-                </div>
-              </HStack>
-              <HStack>
-                <div className="d-flex mr-3 p-3 center">
-                  <input
-                    type="text"
-                    className="searchTerm"
-                    placeholder="Search ID/Ref Number"
-                    value={search}
-                    onChange={(e) => {
-                      setSearch(e.target.value);
-                    }}
-                    style={{
-                      width: "250px !important",
-                      justifyItems: "center",
-                    }}
-                  />
-                  <button
-                    className="searchIconBtn"
-                    onClick={(e) => {
-                      
-                      console.log(search);
-                      handleSearchAcc();
-                    }}
-                  >
-                    <FiSearch />
-                  </button>
-                </div>
-              </HStack>
-              <HStack>
-                <CustomButtonGroup appearance="ghost" />
-              </HStack>
-              
-            </HStack>
-          </div>
-        </div> */}
+        
         <div className="row mt-0">
           <div className="col-lg-12 col-md-12 col-12">
             <table
@@ -315,15 +212,8 @@ const VirtualAccountTable = ({
         </div>
       </div>
       {/* </Stack> */}
-      {/* Popup Component */}
-      <VirtualAccPopUp
-        data={popupData}
-        opened={modalOpened}
-        onClose={() => {setModalOpened(false); setPopupData(null)}}
-      />
-      
     </>
-  );
-};
+  )
+}
 
-export default VirtualAccountTable;
+export default AccountStatementTable

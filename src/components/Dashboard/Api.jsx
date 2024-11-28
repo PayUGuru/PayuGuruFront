@@ -11,6 +11,10 @@ import lodingImg from "../../assets/img/loading.gif";
 import { ApplicationContext } from "../../context/ApplicationContext";
 import useInactivityTimeout from "../../hooks/useInactivityTimeout";
 import CopyButtonIcon from "./commonComponents/CopyButtonIcon";
+import { useDisclosure } from "@mantine/hooks";
+import { Modal, TextInput, Group, ActionIcon } from "@mantine/core";
+import { IconX } from "@tabler/icons-react";
+
 function Api() {
   const { kycStatus } = useContext(ApplicationContext);
   console.log("kyc Status :", kycStatus);
@@ -20,6 +24,30 @@ function Api() {
   const [clientSecret, setClientSecret] = useState("");
   const [showApiKey, setShowApiKey] = useState(false);
   const [showClientSecret, setShowClientSecret] = useState(false);
+
+  const [opened, { open, close }] = useDisclosure(false);
+  const [domain, setDomain] = useState("");
+  const [ipAddresses, setIpAddresses] = useState([""]);
+
+  const handleAddIpField = () => {
+    setIpAddresses([...ipAddresses, ""]);
+  };
+
+  const handleIpChange = (index, value) => {
+    const updatedIps = [...ipAddresses];
+    updatedIps[index] = value;
+    setIpAddresses(updatedIps);
+  };
+
+  const handleDeleteIpField = (index) => {
+    setIpAddresses(ipAddresses.filter((_, i) => i !== index));
+  };
+
+  const handleSave = () => {
+    console.log("Domain:", domain);
+    console.log("IP Addresses:", ipAddresses);
+    close();
+  };
 
   const copyToClipboard = async () => {
     const tokenInput = document.getElementById("api-token");
@@ -217,8 +245,9 @@ function Api() {
                     <button
                       type="button"
                       className="btn btn1 float-right virtual-btn bg-red mb-5"
+                      onClick={open}
                     >
-                      Add IP Address
+                      Add Domain name
                     </button>
                   </div>
                 </div>
@@ -239,6 +268,49 @@ function Api() {
           <Dfooter />
         </div>
       </div>
+
+      <Modal opened={opened} onClose={close} withCloseButton={false} centered>
+        <div className="my-4">
+          <TextInput
+            label="Domain Name"
+            placeholder="Enter domain name"
+            value={domain}
+            onChange={(event) => setDomain(event.target.value)}
+          />
+
+          {ipAddresses.map((ip, index) => (
+            <Group key={index} style={{ marginTop: 10 }} align="flex-end">
+              <TextInput
+                label={`IP Address ${index + 1}`}
+                placeholder="Enter IP address"
+                value={ip}
+                onChange={(event) => handleIpChange(index, event.target.value)}
+                style={{ flex: 1 }}
+              />
+              <ActionIcon
+                color="red"
+                onClick={() => handleDeleteIpField(index)}
+              >
+                <IconX size={16} />
+              </ActionIcon>
+            </Group>
+          ))}
+
+          <Button onClick={handleAddIpField} style={{ marginTop: 10 }}>
+            Add IP Address
+          </Button>
+          <div className="d-flex justify-content-end">
+            <Group position="right" mt="md">
+              <Button
+                className="btn btn1 float-right virtual-btn bg-red"
+                onClick={handleSave}
+              >
+                Save
+              </Button>
+            </Group>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

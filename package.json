@@ -72,6 +72,7 @@
     "jspdf": "^2.5.1",
     "pdf-lib": "^1.17.1",
     "protected-route-react": "^1.0.1",
+    "qrcode.react": "^4.1.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-bootstrap": "^2.10.2",
