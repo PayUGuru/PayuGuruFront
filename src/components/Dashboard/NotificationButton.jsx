@@ -1,17 +1,18 @@
-// import {
-//     Dropdown,
-//     Popover,
-//     Whisper,
-//     WhisperInstance,
-//     Stack,
-//     Badge,
-//     Avatar,
-//     IconButton,
-//     List,
-//     Button,
-//     VStack
-//   } from 'rsuite';
-//   import NoticeIcon from '@rsuite/icons/Notice';
+import {
+    Dropdown,
+    Popover,
+    Whisper,
+    WhisperInstance,
+    Stack,
+    Badge,
+    Avatar,
+    IconButton,
+    List,
+    Button,
+    VStack,
+    HStack
+  } from 'rsuite';
+  import NoticeIcon from '@rsuite/icons/Notice';
 
 // import 'rsuite/Button/styles/index.css';
 // import 'rsuite/ButtonGroup/styles/index.css';
@@ -21,7 +22,7 @@
 // import 'rsuite/Badge/styles/index.css';
 // import 'rsuite/Dropdown/styles/index.css';
 // // (Optional) Import component styles. If you are using Less, import the `index.less` file. 
-// import 'rsuite/IconButton/styles/index.css';
+import 'rsuite/IconButton/styles/index.css';
 // import 'rsuite/Stack/styles/index.css';
 // import 'rsuite/Popover/styles/index.css';
 // // (Optional) Import component styles. If you are using Less, import the `index.less` file. 
@@ -217,15 +218,26 @@ const notifications = apiNotifications.map((notification) => ({
 }));
 export function NotificationButton() {
   return (
-    <div className= "h-theme">
-      <Menu shadow="md" width={320} className="h-theme">
+    <div className="h-theme">
+      <Menu shadow="md" width={320}>
       {/* Button to open the notifications dropdown */}
       <Menu.Target>
         <UnstyledButton className="relative">
-          <Bell size={24} className="text-gray-700" />
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-blue-600 text-color text-xs flex items-center justify-center rounded-full animate-pulse">
+          {/* <Bell size={24} className="text-gray-700" /> */}
+        <Stack>
+          <HStack>
+          <IconButton 
+              icon={
+                <Badge content= {notifications.length}>
+                  <NoticeIcon animation='pulse' style={{ fontSize: 16, margin: "3px"}} className='notice-text' />
+                  </Badge>
+              }
+              />
+          </HStack>
+        </Stack>
+          {/* <span className="absolute -top-1 -right-1 w-5 h-5 bg-blue-600 text-color text-xs flex items-center justify-center rounded-full animate-pulse">
             {notifications.length}
-          </span>
+          </span> */}
         </UnstyledButton>
       </Menu.Target>
 

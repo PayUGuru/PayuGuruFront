@@ -1,8 +1,15 @@
+import { rem } from '@mantine/core';
+
 export const trendDown = ({ size, style, ...props }) => {
     return (
         <svg width="24"
         height="24"
-        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)" stroke="#f24040">
+        viewBox="0 0 24 24" fill="none" 
+        style={{ width: rem(size), height: rem(size), ...style }} 
+        {...props}
+        xmlns="http://www.w3.org/2000/svg" 
+        transform="rotate(270)" 
+        stroke="#f24040">
 
         <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 

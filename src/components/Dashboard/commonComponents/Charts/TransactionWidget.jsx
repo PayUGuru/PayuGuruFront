@@ -3,6 +3,10 @@ import React from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import './TransactionWidget.css';
+import {trendUp} from '../../icons/trendup';
+import {trendDown} from '../../icons/trenddown';
+
+import { TransactionsIcon } from '../../icons/transactions-icon';
 
 const transactions = [
     {
@@ -53,8 +57,9 @@ export function TransactionWidget() {
   return (
     <div className=" h-theme transaction-widget">
       <div className="header">
-        <span className="title">Transactional View</span>
+        <span className="title">Transactional View <TransactionsIcon /></span>
         {/* <span className="menu-icon">...</span> */}
+        
       </div>
       
       <div className="transactions-list">
@@ -69,6 +74,7 @@ export function TransactionWidget() {
                 className={`transaction-change ${transaction.isPositive ? 'positive' : 'negative'}`}
               >
                 {transaction.isPositive ? <FaArrowUp /> : <FaArrowDown />} {transaction.change}
+                {/* {transaction.isPositive ? <trendUp /> : <trendDown />} {transaction.change} */}
               </span>
               <span className="transaction-value">₹ {transaction.value}</span>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import { rem } from '@mantine/core';
 
 export const BotIcon = ({ size, style, ...props }) => {
   return (
@@ -7,6 +7,8 @@ export const BotIcon = ({ size, style, ...props }) => {
       height="47"
       viewBox="0 0 47 47"
       fill="none"
+      style={{ width: rem(size), height: rem(size), ...style }} 
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

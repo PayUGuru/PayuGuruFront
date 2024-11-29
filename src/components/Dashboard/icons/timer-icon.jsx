@@ -1,4 +1,4 @@
-import React from 'react';
+import { rem } from '@mantine/core';
 
 const TimerIcon = ({ size, style, ...props }) => {
   return (

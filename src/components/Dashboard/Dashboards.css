@@ -420,6 +420,10 @@
     background-color: var(--bg-card) !important;
    }
 
+   .m_99ac2aa1:hover {
+    background: var(--bg-slate-900)!important;
+   }
+
 .text-green-500 {
     --tw-text-opacity: 1;
     color: rgb(34 197 94 / var(--tw-text-opacity))  !important;/* #22c55e */;

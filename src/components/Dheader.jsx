@@ -17,6 +17,7 @@ import 'rsuite/Stack/styles/index.css';
 import UPISvgIcon from './Dashboard/commonComponents/UpiIcon';
 import InvoiceIcon from './Dashboard/commonComponents/InvoiceIcon';
 import ReportIcon from './Dashboard/commonComponents/ReportIcon';
+import {Document} from './Dashboard/icons/document';
 const Header = () => {
   const Logout_API = ENDPOINTS.LOGOUT_REQUEST;
   const sessionid = sessionStorage.getItem("sessionid");
@@ -176,7 +177,8 @@ const Header = () => {
              <NotificationButton/>
               </li>
               <li className="nav-item my-auto">
-                <Link className="nav-link" to="/docs">API Docs</Link>
+                <Link className="nav-link" to="/docs">
+                <Document size={20} /> Docs</Link>
 
                 {/* <a href="api" className="nav-link">
                   API Docs

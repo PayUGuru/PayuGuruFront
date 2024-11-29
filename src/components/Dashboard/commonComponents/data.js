@@ -62,16 +62,18 @@ export async function FetchVirtualAccountList(Skip = 0, currentPageNo = 1, items
          console.log('0. Skip: ', Skip);
         try{
           const response = await axios.post(ENDPOINTS.GET_VIRTUAL_ACCOUNT_LIST, {
-            range: [startDateISO, currentDate],
+            // range: [startDateISO, currentDate],
+            range: ["2024-09-03T21:41:52.439+00:00", "2024-10-22T04:55:46.865+00:00"],
             pagination: {
                 skip: Skip,
                 limit: itemsPerPage,
             },
             sessionid: sessionid,
-            sortBy: 'createdAt',        //sortBy,
-            sortDirection:'desc',//sortDirection,
-            searchText: searchText
+            sortBy: 'createdAt',        
+            sortDirection:'desc',
+            // searchText: searchText
         });
+       
        console.log('====================================');
        console.log('response: ', response.data);
        console.log('====================================');
@@ -299,6 +301,138 @@ DataResult.data.sortDirection = sortDirection;
 }
 
 ///////////////////// END UPI LIST /////////////////////
+
+
+
+export async function FetchTransactonList(Skip = 0, currentPageNo = 1, itemsPerPage = 5, sortBy = 'createdAt', sortDirection = 'desc' , searchText = 'Y') {
+  var DataList = {};
+  const DataResult = {
+    data: {
+      message: "",
+      pagination: {
+        totalCount: 0,
+        currentPage: currentPageNo,
+        currentItems: 0,
+        remainingItems: 0,
+      },
+      sortBy:'',
+      sortDirection:'',
+      transaction_list: [],
+    },
+  };
+    const currentDate = new Date().toISOString();
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - 30); // Adjust range as needed
+    const startDateISO = startDate.toISOString();
+
+    const sessionid = sessionStorage.getItem("sessionid");
+    let CurrentPage = sessionStorage.getItem("AC_currentPage") ? parseInt(sessionStorage.getItem("AC_currentPage")) : currentPageNo;
+    let totalCount = sessionStorage.getItem("AC_totalCount") ? parseInt(sessionStorage.getItem("AC_totalCount")) : 0;
+    let perPage = itemsPerPage ? parseInt(itemsPerPage): itemsPerPage; // Default value for perPage, adjust as needed
+
+   console.log('0. Skip: ', Skip);
+  try{
+    const response = await axios.post(ENDPOINTS.TRANSC_LIST, {
+      range: [startDateISO, currentDate],
+      pagination: {
+          skip: Skip,
+          limit: itemsPerPage,
+      },
+      sessionid: sessionid,
+      sortBy: 'createdAt',        //sortBy,
+      sortDirection:'desc',//sortDirection,
+      searchText: searchText
+  });
+ console.log('====================================');
+ console.log('response: ', response.data);
+ console.log('====================================');
+  let responseData = response.data;
+  DataList = `{ ${response.data} }`;
+  const resDataPg = responseData.split(",");
+  let dataCount = resDataPg[3].replace(/\\/g, "");
+  let dataCurentP = resDataPg[4].replace(/\\/g, "").replace("}", "");
+  
+  let pagination = `{ ${JSON.stringify(DataList).replace(/\\/g, "").replace("{ {"," {").split('{')[2].split('},')[1]} }`.replace('/','');
+  const resDataT = responseData.split("[");
+  var dataT = JSON.stringify(resDataT[1].replace("]", "")).replace('/','');
+  var transaction_list = "[" + JSON.parse(dataT) + "]";
+
+  console.log('====================================');
+  console.log('Virtual Account List: ', transaction_list);
+  console.log('====================================');
+  let ACcount;
+  const data = JSON.parse(transaction_list);
+
+  // Get the length
+  ACcount = data.length;
+  ACcount = parseInt(ACcount);
+
+  // Output the total number of results
+
+ 
+  console.log('====================================');
+  console.log('Total number of results:', ACcount);
+  console.log('====================================');
+  var message = `{${JSON.stringify(DataList).replace(/\\/g, "").replace("{ {"," {").split('}')[0].replace("{","").replace("{g","").replace('" "mess":{','')}}`.replace('/','');
+  // var DataResult = {
+  //   data:{
+  //     message:message,
+  //     pagination:pagination,
+  //     transaction_list:transaction_list
+  //   }
+  // }
+  DataResult.data.message = message || "";
+   let TotalCount = dataCount.replace('"totalCount":', "");
+   TotalCount = parseInt(TotalCount);
+   let CurrentPageNo = dataCurentP.replace('"currentPage":', "") != null ? dataCurentP.replace('"currentPage":', "") :  currentPageNo;
+   CurrentPageNo = parseInt(CurrentPageNo);
+   console.log('====================================');
+   console.log('1. Current Page: ', CurrentPageNo);
+   console.log('====================================');
+  let remainingItems = parseInt(TotalCount - (((CurrentPageNo - 1) * perPage) + ACcount));
+   console.log('====================================');
+   console.log('response totalCount: ',  parseInt(TotalCount));
+   console.log('====================================');
+
+   console.log('====================================');
+   console.log('response CurrentPageNumber: ', parseInt(CurrentPageNo));
+   console.log('====================================');
+
+   console.log('====================================');
+   console.log('remaining Items: ', remainingItems);
+   console.log('====================================');
+
+   sessionStorage.setItem("AC_totalCount", parseInt(TotalCount));
+   sessionStorage.setItem("AC_currentPage", parseInt(CurrentPageNo));
+   sessionStorage.setItem("AC_currentItems", parseInt(ACcount));
+   sessionStorage.setItem("AC_remainingItems", parseInt(remainingItems));
+
+
+   sessionStorage.setItem('transaction_list',transaction_list )
+  DataResult.data.pagination = {
+    totalCount: TotalCount,
+    currentPage: CurrentPageNo,
+    currentItems: ACcount,
+    remainingItems: remainingItems
+};
+DataResult.data.transaction_list = transaction_list || [];
+DataResult.data.sortBy = sortBy;
+DataResult.data.sortDirection = sortDirection;
+ console.log('Data Result: ', DataResult);
+  return DataResult;  //JSON.parse("[" + JSON.parse(dataT) + "]");
+  }catch(error){
+    console.error('Error fetching users:', error);
+    // Handle error as appropriate, possibly return an empty DataResult
+    return DataResult;
+  }
+   
+}
+
+
+
+
+
   
   export var VAccountsList = FetchVirtualAccountList();
   export var UPIList = FetchUPIList();
+  export var TransactionList = FetchTransactonList();
