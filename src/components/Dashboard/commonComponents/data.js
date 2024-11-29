@@ -37,7 +37,7 @@ export async function FetchVirtualAccountList(Skip = 0, currentPageNo = 1, items
         };
           const currentDate = new Date().toISOString();
           const startDate = new Date();
-          startDate.setDate(startDate.getDate() - 30); // Adjust range as needed
+          startDate.setDate(startDate.getDate() - 365*15); // Adjust range as needed
           const startDateISO = startDate.toISOString();
 
           const sessionid = sessionStorage.getItem("sessionid");
@@ -62,8 +62,8 @@ export async function FetchVirtualAccountList(Skip = 0, currentPageNo = 1, items
          console.log('0. Skip: ', Skip);
         try{
           const response = await axios.post(ENDPOINTS.GET_VIRTUAL_ACCOUNT_LIST, {
-            // range: [startDateISO, currentDate],
-            range: ["2024-09-03T21:41:52.439+00:00", "2024-10-22T04:55:46.865+00:00"],
+            range: [startDateISO, currentDate],
+            // range: ["2024-09-03T21:41:52.439+00:00", "2024-10-22T04:55:46.865+00:00"],
             pagination: {
                 skip: Skip,
                 limit: itemsPerPage,
@@ -180,7 +180,7 @@ export async function FetchVirtualAccountList(Skip = 0, currentPageNo = 1, items
   };
     const currentDate = new Date().toISOString();
     const startDate = new Date();
-    startDate.setDate(startDate.getDate() - 30); // Adjust range as needed
+    startDate.setDate(startDate.getDate() - 365*15); // Adjust range as needed
     const startDateISO = startDate.toISOString();
 
     const sessionid = sessionStorage.getItem("sessionid");

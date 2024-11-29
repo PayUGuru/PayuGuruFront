@@ -131,7 +131,10 @@ const VirtualAccountTable = ({
             }}
             style={{
               padding: "5px 10px",
-              backgroundColor: row.original.ACstatus === "Y" ? "green" : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
+              backgroundColor:
+                row.original.ACstatus === "Y"
+                  ? "green"
+                  : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
               color: row.original.ACstatus === "N" ? "black" : "white",
               border: "none",
               borderRadius: "25px",

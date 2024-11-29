@@ -6,6 +6,8 @@ import { Button } from "@mui/material";
 import UpiPopup from "./UpiPopup"; // New popup component
 import { FiSearch } from "react-icons/fi";
 import { ENDPOINTS } from "../../../utils/apiConfig";
+import "rsuite/Toggle/styles/index.css";
+import "rsuite/Stack/styles/index.css";
 
 const UpiListTable = ({ data, toggleStatus }) => {
   const [search, setSearch] = useState("");
@@ -56,19 +58,42 @@ const UpiListTable = ({ data, toggleStatus }) => {
         Header: "Action",
         accessor: " ",
         Cell: ({ row }) => (
-          <Button
-            variant="contained"
-            color={row.original.upistatus === "Y" ? "success" : "warning"}
-            onClick={() => toggleStatus(row.original)}
-          >
-            {row.original.upistatus === "Y" ? "Active" : "Disable"}
-          </Button>
+          // <Button
+          //   variant="contained"
+          //   color={row.original.upistatus === "Y" ? "success" : "warning"}
+          //   onClick={() => toggleStatus(row.original)}
+          // >
+          //   {row.original.upistatus === "Y" ? "Active" : "Disable"}
+          // </Button>
+          <button
+          onClick={(e) => {
+            // e.preventDefault();
+
+            handleStatusToggle(row.original);
+          }}
+          style={{
+            padding: "5px 10px",
+            backgroundColor:
+              row.original.upistatus === "Y"
+                ? "green"
+                : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
+            color: row.original.upistatus === "N" ? "black" : "white",
+            fontSize:"14px",
+            border: "none",
+            borderRadius: "25px",
+          }}
+        >
+          {row.original.upistatus === "Y" ? "Active" : "Disable"}
+        </button>
         ),
       },
     ],
     []
   );
-
+  const handleStatusToggle = (rowData) => {
+    // rowData.preventDefault();
+    toggleStatus(rowData); // Call the function from parent
+  };
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: filteredTableData });
 
