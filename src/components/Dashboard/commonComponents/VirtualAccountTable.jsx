@@ -112,6 +112,14 @@ const VirtualAccountTable = ({
           // >
           //   View ACC
           // </Button>
+          <div style={{textAlign:"center", AlignItems:"center", display:"inline-flex"}}>
+            <p style={{marginRight:"1rem"}}>
+                {row.original.AC_id}
+              </p>
+              <CopyButtonIcon
+              data={row.original.AC_id}
+              style={{ backgroundColor: 'var(--heading-color) !important' }}
+            />
           <button
             onClick={(e) => {
               // e.preventDefault();
@@ -129,10 +137,39 @@ const VirtualAccountTable = ({
           >
             {row.original.ACstatus === "Y" ? "View" : "Disable"}
           </button>
+          
+         </div>
         ),
       },
-      { Header: "IFSC Code", accessor: "AC_ifsc" },
-      { Header: "Swift Code", accessor: "AC_swift" },
+      { Header: "IFSC Code", accessor: "AC_ifsc" ,
+        Cell: ({ row }) => (
+        <div style={{textAlign:"center", AlignItems:"center", display:"inline-flex"}}>
+            <p style={{marginRight:"1rem"}}>
+                {row.original.AC_ifsc}
+              </p>
+              <CopyButtonIcon
+                  data={row.original.AC_ifsc}
+                  style={{ backgroundColor: 'var(--heading-color) !important' }}
+                />
+
+        
+            </div>
+        )
+       },
+      { Header: "Swift Code", accessor: "AC_swift" , 
+        Cell: ({ row }) => (
+          <div style={{textAlign:"center", AlignItems:"center", display:"inline-flex"}}>
+        <p style={{marginRight:"1rem"}}>
+                {row.original.AC_swift}
+              </p>
+        <CopyButtonIcon
+                  data={row.original.AC_swift}
+                  style={{ backgroundColor: 'var(--heading-color) !important' }}
+                />
+
+          </div>
+        )
+      },
       // { Header: 'Status', accessor: 'ACstatus' },
       // { Header: "Request Type", accessor: "request_type" },
       {

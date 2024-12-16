@@ -10,7 +10,7 @@
   }
 
   .MuiPaper-root{
-    background-color: var(--bg) !important;
+    background-color: var(--bg-color) !important;
   
   }
   

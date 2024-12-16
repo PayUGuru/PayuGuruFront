@@ -10,6 +10,7 @@ import "rsuite/Toggle/styles/index.css";
 import "rsuite/Stack/styles/index.css";
 import UpiModal from "./UpiModel";
 import QRCodeButton from "./QRCodeIcon";
+import CopyButtonIcon from './CopyButtonIcon';
 
 const UpiListTable = ({ data, toggleStatus }) => {
   const [search, setSearch] = useState("");
@@ -81,10 +82,13 @@ const UpiListTable = ({ data, toggleStatus }) => {
             >
               {row.original.upistatus === "Y" ? "View" : "Disable"}
             </button> */}
-        <p style={{marginRight:"2rem"}}>
+        <p style={{marginRight:"1rem"}}>
           {row.original.upi_id}
         </p>
-
+        <CopyButtonIcon
+              data={row.original.upi_id}
+              style={{ backgroundColor: 'var(--heading-color) !important' }}
+            />
         <QRCodeButton
                 data={row.original.upi_id}
                 openModal={Show_UPI_id}

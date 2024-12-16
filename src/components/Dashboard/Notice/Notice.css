@@ -1,7 +1,7 @@
 
 .Updates{
     width: 85%;
-    background: var(--bg) !important;
+    background: var(--bg-color) !important;
     border-radius: 0.7rem;
     padding: 1rem;
     gap: 1rem;
