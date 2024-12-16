@@ -7,6 +7,8 @@ import SparkleChart from '../Charts/SparkleChart';
 import { ENDPOINTS } from '../../../../utils/apiConfig';
 import { ApplicationContext } from '../../../../context/ApplicationContext';
 import {TransactionWidget} from "../Charts/TransactionWidget"
+import {Cards} from "../../Cards/Cards"
+import {Updates} from "../../Notice/Notice"
 export function StatisticGrid() {
   const { setKycStatus } = useContext(ApplicationContext);
   const dash_index = ENDPOINTS.DASH_BOARD;
@@ -165,19 +167,24 @@ export function StatisticGrid() {
             <div className='col-lg-3 col-md-3 col-sm-12 mt-3'>
               <SimpleGrid cols={{ base: 1, sm: 3 }}>{stats}</SimpleGrid>
             </div>
-            <div className='col-lg-6 col-md-6 col-sm-12 mt-3'>
+            <div className='col-lg-5 col-md-3 col-sm-12 mt-3'>
               <TransactionWidget/>
            </div>
-            <div className="col-lg-3 col-md-3 col-sm-12 mt-3 ">
+            <div className="col-lg-4 col-md-3 col-sm-12 mt-3 ">
               <div className="img-bg">
-                <img
+                {/* <img
                   src="https://i.ibb.co/Fx8FHCd/account-card-img.png"
                   alt="account-card-img"
-                />
-              </div>
+                /> */}
+              <Updates />   
+              </div> 
+
             </div>
-          </div>
-      
+        </div>
+        
+              <div className="row">
+              <Cards />
+              </div>
       </div>
     
   );

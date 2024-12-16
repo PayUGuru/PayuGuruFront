@@ -13,7 +13,8 @@ const PaymentCollect = () => {
 
   const generateQRCode = () => {
     if (amount && description) {
-      const qrData = `Amount: ${amount}, Description: ${description}`;
+      const qrData = `upi://pay?pa=payuguru@dbs&pn=Arena%20ITech%20Private%20Limited&am=${amount}&cu=INR&tn=${description}`;
+      // https://quickchart.io/qr?text=upi://pay?pa=payuguru@dbs&pn=Arena%20ITech%20Private%20Limited&cu=INR&ecLevel=M&margin=2&size=350&centerImageUrl=https://demo.payu.guru/favicon_512.png
       setQrCodeData(qrData);
     } else {
       alert("Please fill in both fields.");

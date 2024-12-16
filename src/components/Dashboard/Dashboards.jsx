@@ -22,6 +22,9 @@ import UpiModal from "./commonComponents/UpiModel"
 import { FaFileContract } from "react-icons/fa";
 import AccountStatementTable from "./commonComponents/AccountStatementTable";
 import { FetchTransactonList } from "./commonComponents/data";
+import {Cards} from "./Cards/Cards";
+import {BasicTable} from "./Table/Table";
+
 function Dashboard() {
   const {theme, toggleTheme} = useTheme();
   const { setKycStatus } = useContext(ApplicationContext);
@@ -517,8 +520,8 @@ function Dashboard() {
                 
                 <div className="card-body p-3">
                   <div>
-                 {/*   <Row gutter={30} className="dashboard-header">
-                     <Col xs={8}>
+                  {/* <Row gutter={30} className="dashboard-header">
+                      <Col xs={8}>
                         <Panel className="trend-box bg-gradient-red">
                           {/* <img className="chart-img" src={images.PVIcon} /> 
                           <div className="title">Page Views </div>
@@ -561,9 +564,15 @@ function Dashboard() {
                     </Col>
                   </Row>*/}
                   </div>
+                  <div className="MainDash">
+                    {/* <h1>Dashboard</h1> */}
+                   <div>
 
-                  <div className="table-responsive">
-                    <table
+                    <BasicTable />
+                   </div>
+                  </div>
+                  {/* <div className="table-responsive">
+                    {/* <table
                       id="example"
                       className="table table-striped table-bordered "
                     >
@@ -620,9 +629,9 @@ function Dashboard() {
                         </tr>
                       </tbody>
                     </table>
-                  
-                  </div>
-                   {/* <div className="table-responsive overflow-x-auto">
+                   *
+                  { </div>
+                   <div className="table-responsive overflow-x-auto">
                       <table className="min-w-full divide-y divide-gray-200">
                         <thead>
                           <tr>
@@ -667,9 +676,9 @@ function Dashboard() {
                           ))}
                         </tbody>
                       </table>
-                    </div> */}
+                    </div>
 
-                  {/* <div className="table-responsive">
+                   <div className="table-responsive">
                     {loader ? (
                       <div className="text-center p-5">
                         <div
@@ -693,7 +702,7 @@ function Dashboard() {
                     )}
                   </div> */}
 
-                </div>
+                </div> 
               </div>
             </div>
           </div>

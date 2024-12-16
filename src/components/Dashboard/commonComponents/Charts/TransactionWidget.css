@@ -1,5 +1,5 @@
 .transaction-widget {
-    width: 420px;
+    /* width: 26rem; */
     /* background: white; */
     font-family:Greycliff CF, var(--mantine-font-family);
     border-radius: 8px;
@@ -123,3 +123,5 @@
     background-color: var(--bg-color) !important;
     color: var(--text-color);
   } */
+
+  

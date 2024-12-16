@@ -96,29 +96,45 @@ const VirtualAccountTable = ({
           return <div>{row.index + 1}</div>;
         },
       },
-      { Header: "Date", accessor: "date" },
-      { Header: "Time", accessor: "time" },
-      { Header: "Bank", accessor: "AC_bank" },
+      // { Header: "Date", accessor: "date" },
+      // { Header: "Time", accessor: "time" },
+      // { Header: "Bank", accessor: "AC_bank" },
       {
         Header: "Bank Account No",
         accessor: "AC_id",
         Cell: ({ row }) => (
-          <div>
-            <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {setModalOpened(true); setPopupData(row.original)}}
-            // onClick={() => handlePopupOpen(row.original)}
+          // <div>
+          //   <Button
+          //   variant="contained"
+          //   color="primary"
+          //   onClick={() => {setModalOpened(true); setPopupData(row.original)}}
+          //   // onClick={() => handlePopupOpen(row.original)}
+          // >
+          //   View ACC
+          // </Button>
+          <button
+            onClick={(e) => {
+              // e.preventDefault();
+
+              setModalOpened(true); setPopupData(row.original)
+            }}
+            className="btn btn-light-view"
+            style={{
+              padding: "5px 10px",
+              // backgroundColor: row.original.ACstatus === "Y" ? "green" : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
+              // color: row.original.ACstatus === "N" ? "black" : "white",
+              border: "none",
+              borderRadius: "25px",
+            }}
           >
-            View ACC
-          </Button>
-          </div>
+            {row.original.ACstatus === "Y" ? "View" : "Disable"}
+          </button>
         ),
       },
       { Header: "IFSC Code", accessor: "AC_ifsc" },
       { Header: "Swift Code", accessor: "AC_swift" },
       // { Header: 'Status', accessor: 'ACstatus' },
-      { Header: "Request Type", accessor: "request_type" },
+      // { Header: "Request Type", accessor: "request_type" },
       {
         Header: "Action",
         accessor: "  ",
@@ -159,6 +175,9 @@ const VirtualAccountTable = ({
     []
   );
 
+
+
+
   const renderHeader = (column) => (
     <th
       {...column.getHeaderProps()}
@@ -171,7 +190,8 @@ const VirtualAccountTable = ({
         borderBottom: "solid 3px red",
         background: "aliceblue",
         color: "black",
-        fontWeight: "bold",
+        fontSize:"13px",
+        // fontWeight: "bold",
         padding: "5px",
         textAlign: "center",
       }}
@@ -291,10 +311,10 @@ const VirtualAccountTable = ({
                         <td
                           {...cell.getCellProps()}
                           style={{
-                            padding: "10px",
+                            padding: "5px",
                             border: "solid 1px gray",
                             background: "var(--bg)",
-                            fontSize: "13px",
+                            fontSize: "12px",
                             alignItems: "center",
                             textAlign: "center",
                             color: "var(--text-color)",

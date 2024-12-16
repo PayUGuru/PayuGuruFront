@@ -87,6 +87,12 @@ const VirtualAccPopUp = ({ data, onClose, opened }) => {
               Revenue
             </Text>
           </UnstyledButton>
+          <UnstyledButton className={classes.item}>
+            {/* <IconCoin size={32} color={theme.colors.yellow[6]} /> */}
+            <Text size="xs" mt={7} mb={7}>
+              More +
+            </Text>
+          </UnstyledButton>
         </SimpleGrid>
       </Card>
 

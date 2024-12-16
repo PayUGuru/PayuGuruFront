@@ -5,8 +5,8 @@ import PlusIcon from '@rsuite/icons/Plus';
 import { Icon } from '@rsuite/icons';
 import 'rsuite/IconButton/styles/index.css';
 import { GrDocumentPdf } from "react-icons/gr";
-import { SiMicrosoftexcel } from "react-icons/si";
-import { PiPrinterLight } from "react-icons/pi";
+// import { PiMicrosoftExcelLogoThin } from "react-icons/si";
+import { PiPrinterLight,PiMicrosoftExcelLogoThin } from "react-icons/pi";
 
 
 const CustomButtonGroup = ({ appearance }) => (
@@ -15,7 +15,7 @@ const CustomButtonGroup = ({ appearance }) => (
       <IconButton appearance={appearance}  size='sm'  className='' color="" icon={<Icon className='' as={GrDocumentPdf } size="1em" />}>
         
       </IconButton>
-      <IconButton appearance={appearance} size='sm'  className='' color="" icon={<Icon className='' as={SiMicrosoftexcel } size="1em" />}>
+      <IconButton appearance={appearance} size='sm'  className='' color="" icon={<Icon className='' as={PiMicrosoftExcelLogoThin } size="1em" />}>
         
       </IconButton>
       <IconButton appearance={appearance}  size='sm' className='' color="" icon={<Icon className='' as={PiPrinterLight } size="1em" />}>

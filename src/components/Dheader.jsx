@@ -16,6 +16,9 @@ import 'rsuite/Toggle/styles/index.css';
 import 'rsuite/Stack/styles/index.css';
 import UPISvgIcon from './Dashboard/commonComponents/UpiIcon';
 import InvoiceIcon from './Dashboard/commonComponents/InvoiceIcon';
+import { UilSignOutAlt,
+} from "@iconscout/react-unicons";
+import { Home, Building2, Flame, PieChart, FileText, Settings, LogOut } from 'lucide-react';
 import ReportIcon from './Dashboard/commonComponents/ReportIcon';
 import {Document} from './Dashboard/icons/document';
 const Header = () => {
@@ -269,8 +272,11 @@ const Header = () => {
           </li>*/}
           <li className={`${activeLink === "/invoices" ? "active" : ""}`}
         onClick={() => handleLinkClick("/invoices")}>
-            <Link to="/invoices" >
-              <i className="fa bg-purple rounded-circle fa-lg mr-2"><InvoiceIcon size={28}/></i>
+            <Link to="/invoices"  
+            
+            >
+              <i className="fa bg-purple rounded-circle fa-lg mr-2 p-2"><InvoiceIcon size={28}/></i>
+              {/* <FileText size={45} className="bg-purple rounded-circle fa-lg mr-2 p-2"/>  */}
               Invoices
             </Link>
           </li>
@@ -282,11 +288,17 @@ const Header = () => {
             </Link>
           </li>
           <li className="">
-            <Link onClick={handleLogout} to='/'>
-             <i
+            <Link onClick={handleLogout} to='/' 
+            
+            // icon={<LogOut size={20} />}
+            >
+             {/* <i
                 className="fa fa-power-off bg-warning rounded-circle fa-lg mr-2"
                
-              ></i>
+              ></i> */}
+               
+              <UilSignOutAlt size={45} className="bg-warning rounded-circle mr-2 p-2"/>
+              {/* <LogOut size={45} className="bg-warning rounded-circle mr-2 p-2" /> */}
               Logout
             </Link>
           </li>

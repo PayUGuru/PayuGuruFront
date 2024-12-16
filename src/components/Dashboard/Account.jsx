@@ -1,6 +1,9 @@
 // src/pages/Account.js
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { TextInput, Text } from '@mantine/core';
+import { BsCheckLg } from "react-icons/bs";
+import { ImCross } from "react-icons/im";
 import Dheader from '../Dheader';
 import Dfooter from '../Dfooter';
 import './Account.css';
@@ -38,6 +41,45 @@ const Account = () => {
 
                 <h3 className=" mt-0 p-3 h-theme">Account Settings</h3>
                 <div className="card-body p-5">
+                <div className="space-y-4">
+                  <TextInput
+                    label="Bank Account Number"
+                    value="XXXX XXXX XXXX 1234"
+                    readOnly
+                    rightSection={
+                      <span className="text-green-500 text-sm">
+                           <BsCheckLg className="text-success fs-2 fw-bold"/>
+                      </span>
+                    }
+                  />
+                  
+                  <TextInput
+                    label="IFSC Code"
+                    value="HDFC0001234"
+                    readOnly
+                  />
+                  
+                  <TextInput
+                    label="Bank Name"
+                    value="HDFC Bank"
+                    readOnly
+                  />
+                  
+                  <TextInput
+                    label="Company Address"
+                    value="123, Business District, City - 400001"
+                    readOnly
+                    rightSection={
+                      <span className="text-green-500 text-sm">
+
+                       {/* <Text size="sm" c={userInfo.user_status === "Y" ? 'teal.6' : 'red.6'}>
+                                                            { userInfo.user_status === "Y" ? <BsCheckLg className="text-success fs-2 fw-bold"/> : <ImCross className="text-danger fs-4 fw-bold "/>}
+                                                            </Text>   */}
+                        <BsCheckLg className="text-success fs-2 fw-bold"/>
+                      </span>
+                    }
+                  />
+                </div>
                   <form action="#">
                     <div className="mb-3">
                       <label className="form-label">Company Name</label>

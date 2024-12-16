@@ -34,6 +34,7 @@ import ProtectedRoute from './ProtectedRoute'; // Import ProtectedRoute componen
 import Docsmain from './docs/Docsmain';
 import SystemInfo from './components/Dashboard/SystemInfo';
 import PaymentCollect from './components/Dashboard/PaymentCollect';
+import Settings from './components/Dashboard/Settings/Settings'
 
 const Routing = () => {
   // const [showLanguageSwitcher, setShowLanguageSwitcher] = useState(false);
@@ -88,6 +89,11 @@ const Routing = () => {
             <Route path="invoices" element={
               <ProtectedRoute>
                 <Invoices />
+              </ProtectedRoute>
+            } />
+            <Route path="setting" element={
+              <ProtectedRoute>
+                <Settings />
               </ProtectedRoute>
             } />
             <Route path="account" element={

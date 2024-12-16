@@ -57,7 +57,7 @@ export function TransactionWidget() {
   return (
     <div className=" h-theme transaction-widget">
       <div className="header">
-        <span className="title">Transactional View <TransactionsIcon /></span>
+        <span className="title">Accounts transactions overview <TransactionsIcon /></span>
         {/* <span className="menu-icon">...</span> */}
         
       </div>
