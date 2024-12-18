@@ -97,7 +97,7 @@ const UpiModal = ({ upiID, qrCodeURL, isOpen, onClose }) => {
     <Modal
       opened={isOpen}
       onClose={onClose}
-      title="Your UPI Details"
+      title="Qr Code"
       centered
       overlayOpacity={0.55}
       overlayBlur={3}

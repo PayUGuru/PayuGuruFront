@@ -113,12 +113,12 @@ const VirtualAccountTable = ({
           //   View ACC
           // </Button>
           <div style={{textAlign:"center", AlignItems:"center", display:"inline-flex"}}>
-            <p style={{marginRight:"1rem"}}>
+            <p style={{marginRight:"1rem", fontSize:"12px" }}>
                 {row.original.AC_id}
               </p>
               <CopyButtonIcon
               data={row.original.AC_id}
-              style={{ backgroundColor: 'var(--heading-color) !important' }}
+              style={{ backgroundColor: 'var(--heading-color) !important'}}
             />
           <button
             onClick={(e) => {
@@ -128,7 +128,8 @@ const VirtualAccountTable = ({
             }}
             className="btn btn-light-view"
             style={{
-              padding: "5px 10px",
+              padding: "2px 2px",
+              // fontSize:"10px",
               // backgroundColor: row.original.ACstatus === "Y" ? "green" : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
               // color: row.original.ACstatus === "N" ? "black" : "white",
               border: "none",
@@ -144,7 +145,7 @@ const VirtualAccountTable = ({
       { Header: "IFSC Code", accessor: "AC_ifsc" ,
         Cell: ({ row }) => (
         <div style={{textAlign:"center", AlignItems:"center", display:"inline-flex"}}>
-            <p style={{marginRight:"1rem"}}>
+            <p style={{marginRight:"1rem", fontSize:"12px"}}>
                 {row.original.AC_ifsc}
               </p>
               <CopyButtonIcon
@@ -159,7 +160,7 @@ const VirtualAccountTable = ({
       { Header: "Swift Code", accessor: "AC_swift" , 
         Cell: ({ row }) => (
           <div style={{textAlign:"center", AlignItems:"center", display:"inline-flex"}}>
-        <p style={{marginRight:"1rem"}}>
+        <p style={{marginRight:"1rem" , fontSize:"12px"}}>
                 {row.original.AC_swift}
               </p>
         <CopyButtonIcon
@@ -182,8 +183,10 @@ const VirtualAccountTable = ({
 
               handleStatusToggle(row.original);
             }}
+            className="btn btn-light-action"
             style={{
-              padding: "5px 10px",
+              padding: "2px 2px",
+              // fontSize:"10px",
               backgroundColor: row.original.ACstatus === "Y" ? "green" : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
               color: row.original.ACstatus === "N" ? "black" : "white",
               border: "none",
@@ -308,6 +311,7 @@ const VirtualAccountTable = ({
                 width: "100%",
                 overflowY: true,
               }}
+               className="font-semibold"
             >
               <thead>
                 {headerGroups.map((headerGroup) => (
@@ -348,10 +352,10 @@ const VirtualAccountTable = ({
                         <td
                           {...cell.getCellProps()}
                           style={{
-                            padding: "5px",
+                            padding: "1px",
                             border: "solid 1px gray",
                             background: "var(--bg)",
-                            fontSize: "12px",
+                            fontSize: "10px",
                             alignItems: "center",
                             textAlign: "center",
                             color: "var(--text-color)",

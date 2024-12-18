@@ -31,53 +31,53 @@ const KYBForm = () => {
     return(
         <div>
             
-       <section class="kyc-form signup-step-container">
-                    <div class="container mt-5" id="wrapper">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-8">
-                                <div class="wizard">
-                                    <div class="wizard-inner">
-                                        <div class="connecting-line"></div>
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active">
-                                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"><span class="round-tab">1 </span> <i>Step 1</i></a>
+       <section className="kyc-form signup-step-container">
+                    <div className="container mt-5" id="wrapper">
+                        <div className="row d-flex justify-content-center">
+                            <div className="col-md-8">
+                                <div className="wizard">
+                                    <div className="wizard-inner">
+                                        <div className="connecting-line"></div>
+                                        <ul className="nav nav-tabs" role="tablist">
+                                            <li role="presentation" className="active">
+                                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"><span className="round-tab">1 </span> <i>Step 1</i></a>
                                             </li>
-                                            <li role="presentation" class="disabled">
-                                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false"><span class="round-tab">2</span> <i>Step 2</i></a>
+                                            <li role="presentation" className="disabled">
+                                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false"><span className="round-tab">2</span> <i>Step 2</i></a>
                                             </li>
-                                            <li role="presentation" class="disabled">
-                                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab"><span class="round-tab">3</span> <i>Step 3</i></a>
+                                            <li role="presentation" className="disabled">
+                                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab"><span className="round-tab">3</span> <i>Step 3</i></a>
                                             </li>
-                                            <li role="presentation" class="disabled">
-                                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab"><span class="round-tab">4</span> <i>Step 4</i></a>
+                                            <li role="presentation" className="disabled">
+                                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab"><span className="round-tab">4</span> <i>Step 4</i></a>
                                             </li>
                                         </ul>
                                     </div>
                     
-                                    <form role="form" action="index.html" class="login-box box8 p-5">
-                                        <div class="tab-content" id="main_form">
-                                            <div class="tab-pane active" role="tabpanel" id="step1">
-                                                <h4 class="text-center mb-4">Step 1</h4>
-                                                <div class="row">
-                                                    <div class="col-md-6 form-group">
+                                    <form role="form" action="index.html" className="login-box box8 p-5">
+                                        <div className="tab-content" id="main_form">
+                                            <div className="tab-pane active" role="tabpanel" id="step1">
+                                                <h4 className="text-center mb-4">Step 1</h4>
+                                                <div className="row">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="name">Business Name</label>
-                                                        <input type="text" class="form-control" name="business_name" id="bname" placeholder="Enter your business name." onkeyup="validatebname()" required/>
+                                                        <input type="text" className="form-control" name="business_name" id="bname" placeholder="Enter your business name." onkeyup="validatebname()" required/>
                                                         </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="name">Account Name</label>
-                                                        <input type="text" class="form-control" name="account_name" id="sa_name" placeholder="Enter your name." required/>
+                                                        <input type="text" className="form-control" name="account_name" id="sa_name" placeholder="Enter your name." required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
-                                                        <label for="mobile">Mobile Number<span class="required"> *</span></label>
-                                                        <input type="mobile" class="form-control" name="mobile" id="mobile" placeholder="Enter your mobile number." required/>
+                                                    <div className="col-md-6 form-group">
+                                                        <label for="mobile">Mobile Number<span className="required"> *</span></label>
+                                                        <input type="mobile" className="form-control" name="mobile" id="mobile" placeholder="Enter your mobile number." required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
-                                                        <label for="email">Email ID<span class="required"> *</span></label>
-                                                        <input type="addemailress" class="form-control" name="email" id="email" placeholder="Enter your email id." required/>
+                                                    <div className="col-md-6 form-group">
+                                                        <label for="email">Email ID<span className="required"> *</span></label>
+                                                        <input type="addemailress" className="form-control" name="email" id="email" placeholder="Enter your email id." required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                     <label for="name">Business Registration Type</label>
-                                                            <select class="form-control browser-default custom-select" id="inputOwnership" name="ownership">
+                                                            <select className="form-control browser-default custom-select" id="inputOwnership" name="ownership">
                                                                 <option value="SelectOwnership">--Select One--</option>
                                                                 <option value="proprietary">Proprietary</option>
                                                                 <option value="partnership">Partnership</option>
@@ -86,9 +86,9 @@ const KYBForm = () => {
                                                                 <option value="llp">LLP</option>
                                                             </select>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="MCC">Business Sector</label>
-                                                        <select class="form-control browser-default custom-select" id="MCC">
+                                                        <select className="form-control browser-default custom-select" id="MCC">
                                                             <option value="Select MCC">--Select MCC--</option>
                                                             <option value="Agricultural Services">Agricultural Services</option>
                                                             <option value="Contract Services">Contract Services</option>
@@ -115,39 +115,39 @@ const KYBForm = () => {
 
                                                         </select>
                                                     </div>
-                                                    <div class="form-group col-md-6">
+                                                    <div className="form-group col-md-6">
                                                         <label for="mccCategory">Category</label>
-                                                        <select class="form-control" id="category">
+                                                        <select className="form-control" id="category">
                                                             <option value="Select One">---Select One--- </option>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group col-md-6">
+                                                    <div className="form-group col-md-6">
                                                         <label for="mccSubCategory">Business Type</label>
-                                                        <select class="form-control" id="subCategory">
+                                                        <select className="form-control" id="subCategory">
                                                             <option value="">---Select One--- </option>
                                                         </select>
                                                     </div>
                                                     
                                                     
                                                 </div>
-                                                <ul class="list-inline pull-right">
-                                                    <li><button type="button" class="btn default-btn next-step">Continue to next step</button></li>
+                                                <ul className="list-inline pull-right">
+                                                    <li><button type="button" className="btn default-btn next-step">Continue to next step</button></li>
                                                 </ul>
                                             </div>
-                                            <div class="tab-pane" role="tabpanel" id="step2">
-                                                <h4 class="text-center mb-4">Step 2</h4>
-                                                <div class="row">
-                                                    <div class="col-md-6 form-group">
+                                            <div className="tab-pane" role="tabpanel" id="step2">
+                                                <h4 className="text-center mb-4">Step 2</h4>
+                                                <div className="row">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="name">Turnover Type</label>
-                                                        <select class="form-control browser-default custom-select" id="inputState">
+                                                        <select className="form-control browser-default custom-select" id="inputState">
                                                             <option value="SelectState">--Select Turnover Type--</option>
                                                             <option value="Andra Pradesh">Small</option>
                                                             <option value="Arunachal Pradesh">Large</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="inputState">State</label>
-                                                        <select class="form-control browser-default custom-select" id="inputState1">
+                                                        <select className="form-control browser-default custom-select" id="inputState1">
                                                             <option value="SelectState">--Select State--</option>
                                                             <option value="Andra Pradesh">Andra Pradesh (37)</option>
                                                             <option value="Arunachal Pradesh">Arunachal Pradesh (12)</option>
@@ -187,116 +187,116 @@ const KYBForm = () => {
                                                             <option value="Ladakh">Ladakh (38)</option>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group col-md-6">
+                                                    <div className="form-group col-md-6">
                                                         <label for="inputDistrict">District</label>
-                                                        <select class="form-control" id="inputDistrict1">
+                                                        <select className="form-control" id="inputDistrict1">
                                                             <option value="">---Select one--- </option>
                                                         </select>
                                                     </div>
                                                     
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="IFSC">City</label>
-                                                        <input type="address" class="form-control" name="City" id="city" placeholder="Enter City" required/>
+                                                        <input type="address" className="form-control" name="City" id="city" placeholder="Enter City" required/>
                                                     </div>
                                                     
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="IFSC">Address 1</label>
-                                                        <input type="address" class="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Address 1" required/>
+                                                        <input type="address" className="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Address 1" required/>
                                                     </div>
                                                     
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="IFSC">Address 2</label>
-                                                        <input type="address" class="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Address 2" required/>
+                                                        <input type="address" className="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Address 2" required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="zip">Postal-Code</label>
-                                                        <input type="zip" class="form-control" name="Zip" id="zip" placeholder="Postal-Code." required/>
+                                                        <input type="zip" className="form-control" name="Zip" id="zip" placeholder="Postal-Code." required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="SA_number">Settlement Account Name</label>
-                                                        <input type="text" class="form-control" name="SA_name" id="SA_number" placeholder="Settlement Account Name" required/>
+                                                        <input type="text" className="form-control" name="SA_name" id="SA_number" placeholder="Settlement Account Name" required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="IFSC">Settlement Account No</label>
-                                                        <input type="address" class="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Settlement Account No" required/>
+                                                        <input type="address" className="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Settlement Account No" required/>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="IFSC">Settlement Account IFSC</label>
-                                                        <input type="address" class="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="IFSC Code" required/>
+                                                        <input type="address" className="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="IFSC Code" required/>
                                                     </div>
                                                     
                                                 </div>
                                                 
-                                                <ul class="list-inline pull-right d-flex">
-                                                    <li><button type="button" class="btn default-btn prev-step mx-1">Back</button></li>
-                                                    <li><button type="button" class="btn default-btn next-step mx-1">Continue</button></li>
+                                                <ul className="list-inline pull-right d-flex">
+                                                    <li><button type="button" className="btn default-btn prev-step mx-1">Back</button></li>
+                                                    <li><button type="button" className="btn default-btn next-step mx-1">Continue</button></li>
                                                 </ul>
                                             </div>
-                                            <div class="tab-pane" role="tabpanel" id="step3">
-                                                <h4 class="text-center mb-4">Step 3</h4>
-                                                    <div class="row">
+                                            <div className="tab-pane" role="tabpanel" id="step3">
+                                                <h4 className="text-center mb-4">Step 3</h4>
+                                                    <div className="row">
                                                         
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="Date">Date Of Birth</label>
-                                                            <input type="Date" name="dob" class="form-control" id="Date" placeholder="" required disabled/>
+                                                            <input type="Date" name="dob" className="form-control" id="Date" placeholder="" required disabled/>
                                                         </div>
                                                         
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="doi">DOI (Date of Incorporation)</label>
-                                                            <input type="doi" name="doi" class="form-control" id="doi" placeholder="DOI" required/>
+                                                            <input type="doi" name="doi" className="form-control" id="doi" placeholder="DOI" required/>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="doi">CIN</label>
-                                                            <input type="text" name="doi" class="form-control" id="cin_num" placeholder="CIN Number" required/>
+                                                            <input type="text" name="doi" className="form-control" id="cin_num" placeholder="CIN Number" required/>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="doi">PAN Number</label>
-                                                            <input type="text" name="pan_number" class="form-control" id="pan_num" placeholder="PAN Number" required/>
+                                                            <input type="text" name="pan_number" className="form-control" id="pan_num" placeholder="PAN Number" required/>
                                                         </div>
                                                         
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="gstNumber">GST Number</label>
-                                                            <input type="gstNumber" name="gstNumber" class="form-control" id="gstNumber" placeholder="GST Number" required/>
+                                                            <input type="gstNumber" name="gstNumber" className="form-control" id="gstNumber" placeholder="GST Number" required/>
                                                         </div>
-                                                        <div class="form-group col-md-6">
+                                                        <div className="form-group col-md-6">
                                                             <label for="otherDocument">Other Document</label>
-                                                            <select class="form-control" id="otherDocument">
+                                                            <select className="form-control" id="otherDocument">
                                                                 <option  value="select">---Select One--- </option>
                                                                 <option id="adhar" value="udyogAdhar">Udyog Adhaar</option>
                                                                 <option id="billNumber" value="electricNumber">Electric Bill Number</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="adhar">Udyog Aadhaar</label>
-                                                            <input type="adhar" name="adhar" class="form-control enable" id="udyogAdhar" placeholder="Udyog Aadhaar" required disabled="true" />
+                                                            <input type="adhar" name="adhar" className="form-control enable" id="udyogAdhar" placeholder="Udyog Aadhaar" required disabled="true" />
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="electricNumber">Electricity Bill Number</label>
-                                                            <input type="electricNumber" name="electricNumber enable" class="form-control" id="electricNumber" placeholder="Electricity Bill Number" required disabled="true" />
+                                                            <input type="electricNumber" name="electricNumber enable" className="form-control" id="electricNumber" placeholder="Electricity Bill Number" required disabled="true" />
                                                         </div>
-                                                        <div class="col-md-6 form-group">
+                                                        <div className="col-md-6 form-group">
                                                             <label for="elctric_board_code">Electricity Board Code</label>
-                                                            <input type="elctric_board_code" name="elctric_board_code" class="form-control" id="elctric_board_code" placeholder="Electricity Board Code" required disabled />
+                                                            <input type="elctric_board_code" name="elctric_board_code" className="form-control" id="elctric_board_code" placeholder="Electricity Board Code" required disabled />
                                                         </div>
                                                     </div>
-                                                    <ul class="list-inline pull-right d-flex">
-                                                        <li><button type="button" class="btn default-btn prev-step mx-1">Back</button></li>
-                                                        <li><button type="button" class="btn default-btn next-step mx-1">Continue</button></li>
+                                                    <ul className="list-inline pull-right d-flex">
+                                                        <li><button type="button" className="btn default-btn prev-step mx-1">Back</button></li>
+                                                        <li><button type="button" className="btn default-btn next-step mx-1">Continue</button></li>
                                                     </ul>
                                             </div>
-                                            <div class="tab-pane" role="tabpanel" id="step4">
-                                                <h4 class="text-center mb-4">Step 4</h4>
-                                                    <div class="row">
+                                            <div className="tab-pane" role="tabpanel" id="step4">
+                                                <h4 className="text-center mb-4">Step 4</h4>
+                                                    <div className="row">
                                                         
                                                     
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                         <label for="IFSC">Website URL / App Name</label>
-                                                        <input type="address" class="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Website URL / App Name" required/>
+                                                        <input type="address" className="form-control" name="aIFSC Codeddress" id="ifsc" placeholder="Website URL / App Name" required/>
                                                     </div>
                                                     
-                                                    <div class="col-md-6 form-group">
+                                                    <div className="col-md-6 form-group">
                                                             <label for="company_partners">Company Partners</label>
-                                                            <select class="form-control browser-default custom-select" id="company_partners" name="company_partners">
+                                                            <select className="form-control browser-default custom-select" id="company_partners" name="company_partners">
                                                                 <option value="selectPartners">--Select Company Partners--</option>
                                                                 <option value="proprietary">1</option>
                                                                 <option value="partnership">2</option>
@@ -305,17 +305,17 @@ const KYBForm = () => {
                                                                 <option value="llp">5+</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-sm-12">
-                                                            <input type="checkbox" class="checkbox form-check d-inline" id="chb" required/><label for="chb" class="form-check-label">&nbsp;I accept all terms and conditions.
+                                                        <div className="col-sm-12">
+                                                            <input type="checkbox" className="checkbox form-check d-inline" id="chb" required/><label for="chb" className="form-check-label">&nbsp;I accept all terms and conditions.
                                                             </label>
                                                         </div>
                                                     </div>
-                                                    <ul class="list-inline pull-right d-flex">
-                                                        <li><button type="button" class="btn default-btn prev-step mx-1">Back</button></li>
-                                                        <li><button type="button" class="btn default-btn next-step mx-1" onClick={Submitform}>Submit</button></li>
+                                                    <ul className="list-inline pull-right d-flex">
+                                                        <li><button type="button" className="btn default-btn prev-step mx-1">Back</button></li>
+                                                        <li><button type="button" className="btn default-btn next-step mx-1" onClick={Submitform}>Submit</button></li>
                                                     </ul>
                                             </div>
-                                            <div class="clearfix"></div>
+                                            <div className="clearfix"></div>
                                         </div>
                                         
                                     </form>

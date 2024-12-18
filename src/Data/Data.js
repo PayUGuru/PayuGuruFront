@@ -50,27 +50,27 @@ import {
         boxShadow: "0px 10px 20px 0px rgba(224, 198, 245, 0.3)",
       },
       barValue: 70,
-      value: "00",
+      value: "34",
       png: UilUsdSquare,
       series: [
         {
-          name: "Today Transactions",
+          name: "Today Collection",
           data: [0,0,0,0,0],
         },
       ],
     },
     {
-      title: "Today Collections",
+      title: "Today Settled",
       color: {
         backGround: "linear-gradient(180deg,#fca61f 0%,rgb(248, 189, 80) 100%)",
         boxShadow: "0px 10px 20px 0px rgba(255, 147, 46, 0.3)",
       },
-      barValue: 80,
+      barValue: 0,
       value: "00",
       png: UilMoneyWithdrawal,
       series: [
         {
-          name: "Today Collections",
+          name: "Today Settled",
           data: [0,0,0,0,0],
         },
       ],
@@ -82,8 +82,8 @@ import {
           "linear-gradient(rgb(255, 73, 73) -146.42%, rgb(255 73 113) -46.42%)",
         boxShadow: "0px 10px 20px 0px rgba(249, 213, 155, 0.3)",
       },
-      barValue: 60,
-      value: "00",
+      barValue: 6,
+      value: "3",
       png: UilClipboardAlt,
       series: [
         {
@@ -97,22 +97,22 @@ import {
   // Recent Update Card Data
   export const UpdatesData = [
     {
-      // img: img1,
-      img: "https://i.postimg.cc/k4vnxyNq/one-svgrepo-com.png",
+      img: img1,
+      // img: "https://i.postimg.cc/k4vnxyNq/one-svgrepo-com.png",
       name: "1. Step",
       noti: "Account Api Check Live At Setting Profile",
       time: "",
     },
     {
-      // img: img2,
-      img: "https://i.postimg.cc/7Zb7L53K/two-svgrepo-com.png",
+      img: img2,
+      // img: "https://i.postimg.cc/7Zb7L53K/two-svgrepo-com.png",
       name: "2. Step",
       noti: "Copy Your Secrets Keys From Account Setting Tab",
       time: "",
     },
     {
-      // img: img3,
-      img: "https://i.postimg.cc/CxHyzKwf/three-svgrepo-com.png",
+      img: img3,
+      // img: "https://i.postimg.cc/CxHyzKwf/three-svgrepo-com.png",
       name: "3. Step",
       noti: "Add Your Secret Keys in your as Env.  Variable",
       time: "",

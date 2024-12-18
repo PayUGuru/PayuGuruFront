@@ -82,7 +82,7 @@ const UpiListTable = ({ data, toggleStatus }) => {
             >
               {row.original.upistatus === "Y" ? "View" : "Disable"}
             </button> */}
-        <p style={{marginRight:"1rem"}}>
+        <p style={{marginRight:"1rem", fontSize:"12px"}}>
           {row.original.upi_id}
         </p>
         <CopyButtonIcon
@@ -102,7 +102,7 @@ const UpiListTable = ({ data, toggleStatus }) => {
             }}
             className="btn btn-light-view"
             style={{
-              padding: "5px 10px",
+              padding: "2px 2px",
               // backgroundColor: row.original.ACstatus === "Y" ? "green" : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
               // color: row.original.ACstatus === "N" ? "black" : "white",
               border: "none",
@@ -133,14 +133,15 @@ const UpiListTable = ({ data, toggleStatus }) => {
 
             handleStatusToggle(row.original);
           }}
+          className="btn btn-light-action"
           style={{
-            padding: "5px 10px",
+            padding: "2px 2px",
             backgroundColor:
               row.original.upistatus === "Y"
                 ? "green"
                 : "linear-gradient(97.38deg, #FD6525 14.66%, #EB780E 55.73%)",
             color: row.original.upistatus === "N" ? "black" : "white",
-            fontSize:"14px",
+            // fontSize:"14px",
             border: "none",
             borderRadius: "25px",
           }}
@@ -221,6 +222,7 @@ const UpiListTable = ({ data, toggleStatus }) => {
                 border: "solid 1px blue",
                 width: "100%",
               }}
+              className="font-semibold"
             >
               <thead>
                 {headerGroups.map((headerGroup) => (
@@ -232,8 +234,8 @@ const UpiListTable = ({ data, toggleStatus }) => {
                           borderBottom: "solid 3px red",
                           background: "aliceblue",
                           color: "black",
+                          fontSize:"13px",
                           // fontWeight: "bold",
-                          fontSize:"12px",
                           padding: "5px",
                           textAlign: "center",
                         }}
@@ -253,9 +255,13 @@ const UpiListTable = ({ data, toggleStatus }) => {
                         <td
                           {...cell.getCellProps()}
                           style={{
-                            // padding: "5px",
+                            padding: "1px",
                             border: "solid 1px gray",
+                            background: "var(--bg)",
+                            fontSize: "10px",
+                            alignItems: "center",
                             textAlign: "center",
+                            color: "var(--text-color)",
                           }}
                         >
                           {cell.render("Cell")}

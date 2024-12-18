@@ -123,11 +123,11 @@
 
 }
 .btn-light-view {
-    width: 100px;
-    padding: 10px 10px;
+    width: 80px;
+    padding: 5px 5px;
     margin: 8px 0px;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 23px;
     letter-spacing: 0em;
@@ -137,6 +137,23 @@
     background:#fd820f73;
 
 }
+
+.btn-light-action {
+    width: 80px;
+    padding: 5px 5px;
+    margin: 8px 0px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0em;
+    color: var(--text-color);
+    border: 1px 1px 1px var(--bg-color);
+    text-align: center;
+    background:green;
+
+}
+
 .account-details {
     border-radius: 20px;
     background-color: var(--bg-color);
