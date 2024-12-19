@@ -7,9 +7,9 @@ function SparkleChart({ trendData }) {
   const trendColors = { positive: 'teal.6', negative: 'red.6', neutral: 'gray.5' };
 
   return (
-    <HStack gap="sm">
+    <HStack gap="md">
       <Sparkline
-        w={200}
+        w={242}
         h={60}
         data={trendData}
         trendColors={trendColors}

@@ -6,7 +6,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Paper as Pep} from '@mantine/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
 import "./Table.css";
+import { faCircleCheck , faCircleXmark, faCircleInfo} from "@fortawesome/free-regular-svg-icons";
 
 function createData(trackingId,TransactionTime, TransactionType, Payment_Mode,TransactionAmount, Fess_n_GST,Settlement_Amount,Closing_Amount,Credit_Debit, status) {
   return {trackingId, TransactionTime,TransactionType, Payment_Mode,TransactionAmount, Fess_n_GST,Settlement_Amount,Closing_Amount,Credit_Debit, status};
@@ -20,37 +24,101 @@ const rows = [
 ];
 
 
-const makeStyle=(status)=>{
-  if(status === 'Approved')
-  {
-    return {
-      background: 'rgb(145 254 159 / 47%)',
-      color: 'green',
-    }
-  }
-  else if(status === 'Pending')
-  {
-    return{
-      background: '#ffadad8f',
-      color: 'red',
-    }
-  }
-  else if(status === 'Failed')
-  {
-    return{
-      background: '#ffadad9f',
-      color: 'red',
-    }
-  }
-  else{
-    return{
-      background: '#59bfff',
-      color: 'white',
-    }
-  }
-}
+// const makeStyle=(status)=>{
+//   if(status === 'Approved')
+//   {
+//     return {
+//       background: 'var(--bg-approved-tag)',
+//       color: 'var(--text-approved-tag)',
+//       TextAlign: "center",
+//       justifyContent: "flex-start",
+//       justifyTtems: "center",
+//       display: "inline-flex",
+//       flexDirection: "row",
+//       alignItems: "center"
+//     }
+//   }
+//   else if(status === 'Pending')
+//   {
+//     return{
+//       background: 'var(--bg-pending-tag)',
+//       color: 'var(--text-pending-tag)',
+//       TextAlign: "center",
+//       justifyContent: "flex-start",
+//       justifyTtems: "center",
+//       display: "inline-flex",
+//       flexDirection: "row",
+//       alignItems: "center"
+//     }
+//   }
+//   else if(status === 'Failed')
+//   {
+//     return{
+//       background: 'var(--bg-failed-tag)',
+//       color: 'var(--text-failed-tag)',
+//       TextAlign: "center",
+//       justifyContent: "flex-start",
+//       justifyTtems: "center",
+//       display: "inline-flex",
+//       flexDirection: "row",
+//       alignItems: "center"
+//     }
+//   }
+//   else{
+//     return{
+//       background: 'var(--bg-ongoing-tag)',
+//       color: 'var(--text-ongoing-tag)',
+//       TextAlign: "center",
+//       justifyContent: "flex-start",
+//       justifyTtems: "center",
+//       display: "inline-flex",
+//       flexDirection: "row",
+//       alignItems: "center"
+//     }
+//   }
+// }
 
+const makeStyle = (status) => {
+  const baseStyle = {
+    textAlign: "center",
+    // justifyContent: "center",
+    justifyContent: "flex-start",
+    justifyTtems: "center",
+    display: "inline-flex",
+    flexDirection: "row",
+    alignItems: "center",
+    padding: "2px 6px",
+    borderRadius: "25px",
+    fontWeight: 500,
+    fontSize: "12px",
+  };
 
+  switch (status) {
+    case 'Approved':
+      return { ...baseStyle, background: 'var(--bg-approved-tag)', color: 'var(--text-approved-tag)' };
+    case 'Pending':
+      return { ...baseStyle, background: 'var(--bg-pending-tag)', color: 'var(--text-pending-tag)' };
+    case 'Failed':
+      return { ...baseStyle, background: 'var(--bg-failed-tag)', color: 'var(--text-failed-tag)' };
+    default:
+      return { ...baseStyle, background: 'var(--bg-ongoing-tag)', color: 'var(--text-ongoing-tag)' };
+  }
+};
+
+const StatusBadge = ({ status }) => {
+  const icon = {
+    Approved: <FontAwesomeIcon icon={faCircleCheck} style={{ color: "var(--text-approved-tag)", marginRight: "4px" }} />,
+    Pending: <FontAwesomeIcon icon={faCircleExclamation} style={{ color: "var(--text-pending-tag)", marginRight: "4px" }} />,
+    Failed: <FontAwesomeIcon icon={faCircleXmark} style={{ color: "var(--text-failed-tag)", marginRight: "4px" }} />,
+  };
+
+  return (
+    <span style={makeStyle(status)}>
+      {icon[status] || <FontAwesomeIcon icon={faCircleXmark} style={{ marginRight: "4px" }} />}
+      {status}
+    </span>
+  );
+};
 // const transactions = [
 //   {
 //     id: 1,
@@ -88,12 +156,13 @@ export function BasicTable() {
       {/* <h3>Recent Orders</h3> */}
         <TableContainer
           component={Paper}
-          style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
+          style={{ boxShadow: "0px 13px 20px 0px #80808029", border:"1px 20px 0px  #80808029" , borderRadius:"5px"}}
           className="theme h-theme"
         >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
+          <Pep shadow="xs"  radius="md" withBorder>
+          <Table sx={{ minWidth: 650, border:"1px 20px 0px  #80808029" }} aria-label="simple table">
+            <TableHead sx={{border:"1px 20px 0px  #80808029"}}>
+              <TableRow sx={{border:"1px 20px 0px  #80808029"}}>
                 <TableCell>ID</TableCell>
                 {/* <TableCell align="left">Tracking ID</TableCell> */}
                 <TableCell align="left">Transaction Time</TableCell>
@@ -141,13 +210,16 @@ export function BasicTable() {
                   <TableCell align="left">{row.Closing_Amount}</TableCell>
                   <TableCell align="left">{row.Credit_Debit}</TableCell>
                   <TableCell align="left">
-                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                     {/* <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                    row.status === 'completed'
                      ? 'bg-green-100 text-green-800'
                      : 'bg-yellow-100 text-yellow-800'
-                     }`} style={makeStyle(row.status)}>
+                     }`} style={makeStyle(row.status) }>
+                  {row.status === "Approved"? <FontAwesomeIcon icon={faCircleCheck}  style={{textAlign:"center", AlignItems:"center", display:"inline-flex", color: row.status === 'completed' ? "#7cd902" : "var(--text-approved-tag)",  marginRight:"2px"}} /> :  <FontAwesomeIcon icon={faCircleXmark}  style={{textAlign:"center", AlignItems:"center", display:"inline-flex", color: row.status === 'Failed' ? "#ffadad8f" : "var(--text-color)", marginRight:"2px"}} /> }
+                  
                   {row.status}
-                </span> 
+                </span>  */}
+                <StatusBadge status={row.status} />
                     {/* // <span className="status" style={makeStyle(row.status)}>{row.status}</span> */}
                   </TableCell>
                   {/* <TableCell align="left" className="Details">View</TableCell> */}
@@ -155,8 +227,8 @@ export function BasicTable() {
               ))}
             </TableBody>
           </Table>
+        </Pep>
         </TableContainer>
-      
       
       </div>
 

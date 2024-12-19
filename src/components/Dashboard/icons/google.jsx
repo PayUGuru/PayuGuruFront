@@ -1,3 +1,7 @@
+import React from 'react';
+import { rem } from '@mantine/core';
+
+
 export const Google = ({ size, style, ...props }) => {
     return (
       <svg
@@ -5,6 +9,8 @@ export const Google = ({ size, style, ...props }) => {
         height="16"
         viewBox="0 0 17 16"
         fill="none"
+        style={{ width: rem(size), height: rem(size), ...style }} 
+        {...props}
         xmlns="http://www.w3.org/2000/svg"
       >
         <g clip-path="url(#clip0_7948_15260)">

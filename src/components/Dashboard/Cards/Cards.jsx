@@ -9,7 +9,9 @@ export function Cards() {
     <div className="Cards">
       {cardsData.map((card, id) => {
         return (
+           
           <div className="parentContainer" key={id} style={{margin:"5px"}}>
+
             <Card
               title={card.title}
               color={card.color}

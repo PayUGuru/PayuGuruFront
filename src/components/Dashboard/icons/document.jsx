@@ -1,3 +1,4 @@
+import React from 'react';
 import { rem } from '@mantine/core';
 
 export const Document = ({ size, style, ...props }) => {
@@ -8,6 +9,7 @@ export const Document = ({ size, style, ...props }) => {
         viewBox="0 0 16 16"
         fill="none"
         style={{ width: rem(size), height: rem(size), ...style }} 
+        {...props}
         {...props}
         xmlns="http://www.w3.org/2000/svg"
       >

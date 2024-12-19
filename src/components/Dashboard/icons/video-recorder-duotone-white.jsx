@@ -1,4 +1,5 @@
 import React from 'react';
+import { rem } from '@mantine/core';
 
 const VideoRecorderDuotoneWhite = ({ size, style, ...props }) => {
   return (
@@ -7,6 +8,8 @@ const VideoRecorderDuotoneWhite = ({ size, style, ...props }) => {
       height="24"
       viewBox="0 0 20 20"
       fill="none"
+      style={{ width: rem(size), height: rem(size), ...style }} 
+              {...props}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

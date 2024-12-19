@@ -165,19 +165,27 @@ export function StatisticGrid() {
         
           <div className="row">
             <div className='col-lg-3 col-md-3 col-sm-12 mt-3'>
+            <Paper shadow="xs"  radius="md" withBorder>
               <SimpleGrid cols={{ base: 1, sm: 3 }}>{stats}</SimpleGrid>
+              </Paper>
             </div>
             <div className='col-lg-5 col-md-3 col-sm-12 mt-3'>
+              <Paper shadow="xs"  radius="md" withBorder>
+
               <TransactionWidget/>
+              </Paper>
            </div>
             <div className="col-lg-4 col-md-3 col-sm-12 mt-3 ">
+            <Paper shadow="xs"  radius="md" withBorder>
               <div className="img-bg">
                 {/* <img
                   src="https://i.ibb.co/Fx8FHCd/account-card-img.png"
                   alt="account-card-img"
                 /> */}
-              <Updates />   
+             
+                <Updates />   
               </div> 
+              </Paper>
 
             </div>
         </div>

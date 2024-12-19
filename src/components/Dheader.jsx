@@ -11,9 +11,11 @@ import { Nav, Navbar } from 'react-bootstrap';
 import NotificationButton from './Dashboard/NotificationButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Stack, Toggle } from 'rsuite';
+
 // import { ModeToggle } from './mode-toggle';
 import 'rsuite/Toggle/styles/index.css';
 import 'rsuite/Stack/styles/index.css';
+// import 'rsuite/HStack/styles/index.css';
 import UPISvgIcon from './Dashboard/commonComponents/UpiIcon';
 import InvoiceIcon from './Dashboard/commonComponents/InvoiceIcon';
 import { UilSignOutAlt,
@@ -21,6 +23,8 @@ import { UilSignOutAlt,
 import { Home, Building2, Flame, PieChart, FileText, Settings, LogOut } from 'lucide-react';
 import ReportIcon from './Dashboard/commonComponents/ReportIcon';
 import {Document} from './Dashboard/icons/document';
+import {Banner} from './Dashboard/Banner'
+
 const Header = () => {
   const Logout_API = ENDPOINTS.LOGOUT_REQUEST;
   const sessionid = sessionStorage.getItem("sessionid");
@@ -80,6 +84,7 @@ const Header = () => {
 
   return (
     <div>
+      
       <header className={`h-theme ${theme} theme-controller`}>
        <div>
        <nav className="container-fluid navbar navbar-expand-lg">
@@ -194,6 +199,11 @@ const Header = () => {
                   Status
                 </a> */}
               </li>
+              {/* <li className="nav-item my-auto ">
+                <HStack>
+                <Banner/>
+                </HStack>
+              </li> */}
                 
               {/* <li className="nav-item my-auto">
                <FontAwesomeIcon icon="fa-regular fa-message" />
@@ -236,7 +246,7 @@ const Header = () => {
        </div>
       </header>
 
-      <div className="sidebar sidebar-collapse" id="navbarSupportedContent">
+      <div className="sidebar sidebar-collapse" id="navbarSupportedContent" style={{borderTopLeftRadius:"8px", borderTopRightRadius:"8px"}}>
         <ul>
           <li className={`${activeLink === "/dashboard" ? "active" : ""}`}
         onClick={() => handleLinkClick("/dashboard")}>

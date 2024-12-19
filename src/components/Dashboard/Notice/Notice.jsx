@@ -7,6 +7,7 @@ export function Updates () {
     <div className="Updates">
       {UpdatesData.map((update) => {
         return (
+          
           <div className="update">
             <img src={update.img} alt="profile" />
             <div className="noti">
@@ -17,6 +18,7 @@ export function Updates () {
                 <span>{update.time}</span>
             </div>
           </div>
+         
         );
       })}
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { rem } from '@mantine/core';
 
 const PremiumBadge = ({ size, style, ...props }) => {
   return (
@@ -7,6 +8,8 @@ const PremiumBadge = ({ size, style, ...props }) => {
       height="18"
       viewBox="0 0 18 18"
       fill="none"
+      style={{ width: rem(size), height: rem(size), ...style }} 
+              {...props}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

@@ -1,3 +1,6 @@
+import React from 'react';
+import { rem } from '@mantine/core';
+
 export const Grid = ({ size, style, ...props }) => {
     return (
       <svg
@@ -5,6 +8,8 @@ export const Grid = ({ size, style, ...props }) => {
         height="16"
         viewBox="0 0 16 16"
         fill="none"
+        style={{ width: rem(size), height: rem(size), ...style }} 
+        {...props}
         xmlns="http://www.w3.org/2000/svg"
       >
         <g clip-path="url(#clip0_7668_20089)">

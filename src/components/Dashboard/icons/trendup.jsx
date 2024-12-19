@@ -1,4 +1,6 @@
+import React from 'react';
 import { rem } from '@mantine/core';
+
 export const trendUp = ({ size, style, ...props }) => {
     return (
         <svg   width="24"

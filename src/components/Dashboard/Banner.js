@@ -1,7 +1,7 @@
 import {AlertIcon, ArrowRightIcon} from '@primer/octicons-react';
 import {useTranslation} from 'react-i18next';
 
-function Banner(props) {
+export const Banner = (props) => {
   const {t} = useTranslation();
 
   return (
@@ -16,7 +16,7 @@ function Banner(props) {
           )}{' '}
         </div>
         <a
-          href="https://demo.payu.guru"
+          href="https://payuguru.com"
           rel="noreferrer"
           target="_blank"
         >

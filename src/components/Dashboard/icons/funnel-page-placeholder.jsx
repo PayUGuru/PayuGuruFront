@@ -1,4 +1,5 @@
 import React from 'react';
+import { rem } from '@mantine/core';
 
 const FunnelPagePlaceholder = ({ size, style, ...props }) => {
   return (
@@ -8,6 +9,8 @@ const FunnelPagePlaceholder = ({ size, style, ...props }) => {
       viewBox="0 0 1440 810"
       height="100%"
       preserveAspectRatio="xMidYMid meet"
+      style={{ width: rem(size), height: rem(size), ...style }} 
+        {...props}
       version="1.0"
     >
       <defs>

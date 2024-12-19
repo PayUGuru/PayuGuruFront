@@ -1,3 +1,4 @@
+import React from 'react';
 import { rem } from '@mantine/core';
 
 export const About = ({ size, style, ...others }) => {

@@ -1,3 +1,6 @@
+import React from 'react';
+import { rem } from '@mantine/core';
+
 export const Like = ({ size, style, ...props }) => {
     return (
       <svg
@@ -5,6 +8,8 @@ export const Like = ({ size, style, ...props }) => {
         height="14"
         viewBox="0 0 15 14"
         fill="none"
+        style={{ width: rem(size), height: rem(size), ...style }} 
+        {...props}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
